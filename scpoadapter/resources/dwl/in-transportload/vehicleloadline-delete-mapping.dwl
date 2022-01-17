@@ -2,6 +2,9 @@
 output application/java
 ---
  (payload map (vehicleLoadLine, indexOfVehicleLoadLineData) -> {
+ 	MS_BULK_REF: vehicleLoadLine.MS_BULK_REF,
+	MS_REF: vehicleLoadLine.MS_REF,
+	INTEGRATION_STAMP: vehicleLoadLine.INTEGRATION_STAMP,
  	LOADID: vehicleLoadLine.LOADID,
  	PRIMARYITEM: vehicleLoadLine.PRIMARYITEM,
  	EXPDATE: vehicleLoadLine.EXPDATE,
