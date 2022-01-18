@@ -38,8 +38,10 @@ scpo:
       tables: "movingevent,movingeventdata,dfumovingeventmap"
       parenttable: "movingevent"
     bydm_forecast2:
+      in:
+        table: "skuexternalfcst"
       tables: "fcst,skuexternalfcst"
-      parenttable: "fcst"
+      parenttable: "fcst,skuexternalfcst"
     bydm_forecasthistory:
       tables: "skuhistfcst"
       parenttable: "skuhistfcst"
@@ -78,7 +80,7 @@ scpo:
       parenttable: "cust"
     bydm_plannedsupply:
       tables: "planpurch,planarriv"
-      parenttable: "planpurch"
+      parenttable: "planpurch,planarriv"
     bydm_prepacksupply:
       tables: "allocsupplyprepack,allocsupplyprepackdetails"
       parenttable: "allocsupplyprepack"

@@ -114,7 +114,7 @@ scpo:
     loc:
       receivers: 'LCT.GLOBAL'
       messagetype: 'location'
-      identifier: 'BYDM 2021.10.0'
+      identifier: 'BYDM 2021.5.0'
     fcstorder:
       receivers: 'LCT.GLOBAL'
       messagetype: 'nettedForecast2'

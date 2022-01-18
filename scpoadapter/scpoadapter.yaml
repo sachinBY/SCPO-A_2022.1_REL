@@ -20,9 +20,7 @@ bydm:
       hierarchies: "CAT,SUBCAT"
     process:
       ancestry: "false"    
-  fcst:
-    in:
-      table: "skuexternalfcst"    
+      
     
   inventory:
     aggregation:
