@@ -25,15 +25,15 @@ scpo:
     planarriv:
       receivers: 'HOST.GLOBAL'
       messagetype: 'plannedSupply'
-      identifier: 'BYDM 2021.5.0'
+      identifier: 'BYDM 2021.8.0'
     planpurch:
       receivers: 'HOST.GLOBAL'
       messagetype: 'plannedSupply'
-      identifier: 'BYDM 2021.5.0'
+      identifier: 'BYDM 2021.8.0'
     planorder:
       receivers: 'HOST.GLOBAL'
       messagetype: 'plannedSupply'
-      identifier: 'BYDM 2021.5.0'
+      identifier: 'BYDM 2021.8.0'
     skuhist:
       receivers: 'HOST.GLOBAL'
       messagetype: 'demandHistory'
@@ -97,7 +97,7 @@ scpo:
       receivers: 'HOST.GLOBAL'
       messagetype: 'itemLocation'
       format: 'bydm'
-      identifier: 'BYDM 2021.5.0'
+      identifier: 'BYDM 2021.10.0'
     skuprojstatic:
       receivers: 'HOST.GLOBAL'
       messagetype: 'itemLocationProjection'
@@ -114,17 +114,17 @@ scpo:
     loc:
       receivers: 'LCT.GLOBAL'
       messagetype: 'location'
-      identifier: 'BYDM 2021.5.0'
+      identifier: 'BYDM 2021.10.0'
     fcstorder:
       receivers: 'LCT.GLOBAL'
       messagetype: 'nettedForecast2'
       format: 'bydm'
-      identifier: 'BYDM 2021.5.0'
+      identifier: 'BYDM 2021.8.0'
     skueffinventoryparam:
       receivers: 'LCT.GLOBAL'
       messagetype: 'itemLocationEffectiveInventoryParameters'
       format: 'bydm'
-      identifier: 'BYDM 2021.5.0'
+      identifier: 'BYDM 2021.7.0'
     inventory:
       receivers: 'LCT.GLOBAL'
       messagetype: 'inventoryOnHand2'
