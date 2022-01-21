@@ -3,8 +3,8 @@ scpo:
     enabled: false
   db:
     type: ""
-    blockSize: "5000"
-    fetchSize: "20000"
+    blockSize: "10000"
+    fetchSize: "30000"
     batchCommitSize: "1000"
     batchExecuteMaxRetrial: "3"
     maxAllowedErrorsInBatch: "10"
