@@ -1,0 +1,10 @@
+scpo:
+  tables:
+    hierarchies:
+      total: 5
+      '0': 'item'
+      '1': 'dmdunit'
+      '2': 'uomcategoryconvfactor'
+      '3': 'loc'
+      '4': 'sku'
+      

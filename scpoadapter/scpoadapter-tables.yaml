@@ -11,115 +11,135 @@ scpo:
         processed_csv_dir:
           path: "//MD1NPDVJCE01.dev.corp.local/Tools/u/SCPO-A/archive"  
     bydm_billofmaterial:
+      #version: "2021.2.0"
       tables: "bom,altbom"
-      parenttable: "bom"
+      tables_for_soft_delete: "bom"
     bydm_calendar:
+      #version: "2021.2.0"
       tables: "cal,calpattern,calattribute"
-      parenttable: "cal"
+      tables_for_soft_delete: "cal"
     bydm_customerorder:
+      #version: "2021.2.0"
       tables: "custorder,custorderheader"
-      parenttable: "custorder" 
+      tables_for_soft_delete: "custorder" 
     bydm_demandchannel:
       tables: "dmdgroup"
-      parenttable: "dmdgroup"
+      tables_for_soft_delete: "dmdgroup"
     bydm_demandforecastunit:
       tables: "dfuview,dfutosku"
-      parenttable: "dfuview"
+      tables_for_soft_delete: "dfuview"
     bydm_demandgroupparameters:
       tables: "skudmdgroupparam,skudmdgroupeffparam"
-      parenttable: "skudmdgroupparam"
+      tables_for_soft_delete: "skudmdgroupparam"
     bydm_demandunit:
       tables: "dmdunit"
-      parenttable: "dmdunit"  
+      tables_for_soft_delete: "dmdunit"  
     bydm_dynamicdeploymentsourcing:
       tables: "dyndepsrc"
-      parenttable: "dyndepsrc"
+      tables_for_soft_delete: "dyndepsrc"
     bydm_eventgroup:
+      #version: "2021.2.0"
       tables: "movingevent,movingeventdata,dfumovingeventmap"
-      parenttable: "movingevent"
+      tables_for_soft_delete: "movingevent"
     bydm_forecast2:
-      in:
-        table: "skuexternalfcst"
+      #version: "2021.2.0"
       tables: "fcst,skuexternalfcst"
-      parenttable: "fcst,skuexternalfcst"
+      tables_for_soft_delete: "fcst,skuexternalfcst"
     bydm_forecasthistory:
       tables: "skuhistfcst"
-      parenttable: "skuhistfcst"
+      tables_for_soft_delete: "skuhistfcst"
     bydm_inventoryonhand2:
+      #version: "2021.2.0"
       tables: "inventory"
-      parenttable: "inventory"
+      tables_for_soft_delete: "inventory"
     bydm_inventorytransaction2:
+      #version: "2021.2.0"
       tables: "hist"
-      parenttable: "hist"
+      tables_for_soft_delete: "hist"
     bydm_item:
+      #version: "2021.3.0"
       tables: "item,dmdunit,uomcategoryconvfactor"
-      parenttable: "item"
+      tables_for_soft_delete: "item"
     bydm_itemhierarchylevelmember:
       tables: "dmdunit"
-      parenttable: "dmdunit"   
+      tables_for_soft_delete: "dmdunit"   
     bydm_itemlocation:
+      #version: "2021.2.0"
       tables: "sku,skudemandparam,skudeploymentparam,skueffinventoryparam,skuplanningparam,skusafetystockparam,skuperishableparam,skuioparam,storagerequirement,ss,skueffioparam,sspresentation"
-      parenttable: "sku"       
+      tables_for_soft_delete: "sku"       
     bydm_itemlocationdemandgroupmap:
+      #version: "2021.2.0"
       tables: "itemlocdmdgroupmap"
-      parenttable: "itemlocdmdgroupmap"  
+      tables_for_soft_delete: "itemlocdmdgroupmap"  
     bydm_location:
+      #version: "2021.2.0"
       tables: "loc"
-      parenttable: "loc"
+      tables_for_soft_delete: "loc"
     bydm_measurement:
       tables: "uom,uomcategory"
-      parenttable: "uom"    
+      tables_for_soft_delete: "uom"    
     bydm_network:
+      #version: "2021.2.0"
       tables: "network,networkcap,sourcing,sourcingrequirement,sourcinguomconvfactor"
-      parenttable: "network"
+      tables_for_soft_delete: "network"
     bydm_orderclose:
+      #version: "2021.2.0"
       tables: "histtransactual,histtransplan"
-      parenttable: "histtransactual"
+      tables_for_soft_delete: "histtransactual"
     bydm_party:
+      #version: "2021.2.0"
       tables: "cust"
-      parenttable: "cust"
+      tables_for_soft_delete: "cust"
     bydm_plannedsupply:
+      #version: "2021.2.0"
       tables: "planpurch,planarriv"
-      parenttable: "planpurch,planarriv"
+      tables_for_soft_delete: "planpurch,planarriv"
     bydm_prepacksupply:
       tables: "allocsupplyprepack,allocsupplyprepackdetails"
-      parenttable: "allocsupplyprepack"
+      tables_for_soft_delete: "allocsupplyprepack"
     bydm_pricespecification2:
       tables: "dfubaseprice,dfueffprice"
-      parenttable: "dfubaseprice"
+      tables_for_soft_delete: "dfubaseprice"
     bydm_productionrouting:
+      #version: "2021.2.0"
       tables: "productionmethod,productionstep,altproductionstep"
-      parenttable: "productionmethod"
+      tables_for_soft_delete: "productionmethod"
     bydm_promotion:
       tables: "ddeprofile,dfuddemap"
-      parenttable: "ddeprofile"
+      tables_for_soft_delete: "ddeprofile"
     bydm_purchasemethod:
+      #version: "2021.2.0"
       tables: "purchmethod"
-      parenttable: "purchmethod"
+      tables_for_soft_delete: "purchmethod"
     bydm_purchaseorder:
+      #version: "2021.2.0"
       tables: "purchorder"
-      parenttable: "purchorder"
+      tables_for_soft_delete: "purchorder"
     bydm_relation:
+      #version: "2021.2.0"
       tables: "supersession,dfumaintcopydfu"
-      parenttable: "supersession"
+      tables_for_soft_delete: "supersession"
     bydm_resource:
+      #version: "2021.2.0"
       tables: "cal,res,calpattern,calattribute"
-      parenttable: "res"
+      tables_for_soft_delete: "res"
     bydm_scheduledreceipt:
       tables: "schedrcpts,schedrcptsdetail"
-      parenttable: "schedrcpts"
+      tables_for_soft_delete: "schedrcpts"
     bydm_supplementalorder:
       tables: "suppordersku"
-      parenttable: "suppordersku"  
+      tables_for_soft_delete: "suppordersku"  
     bydm_sourcing:
+      #version: "2021.2.0"
       tables: "sourcing,sourcingrequirement,sourcinguomconvfactor"
-      parenttable: "sourcing"        
+      tables_for_soft_delete: "sourcing"        
     bydm_transportequipment:
       tables: "transmode,transmodecap"
-      parenttable: "transmode"
+      tables_for_soft_delete: "transmode"
     bydm_transportload:
+      #version: "2021.2.0"
       tables: "vehicleloadline,vehicleload"
-      parenttable: "vehicleload"
+      tables_for_soft_delete: "vehicleload"
   metadata:
     tables: "allocsupplyprepack,allocsupplyprepackdetails,bom,altbom,cal,calpattern,calattribute,custorder,custorderheader,dmdgroup,dfuview,dfutosku,dfubaseprice,dfueffprice,skudmdgroupparam,skudmdgroupeffparam,dmdunit,dyndepsrc,movingevent,movingeventdata,dfumovingeventmap,fcst,skuexternalfcst,skuhistfcst,inventory,hist,item,uomcategoryconvfactor,sku,skudemandparam,skudeploymentparam,skueffinventoryparam,skuplanningparam,skusafetystockparam,skuperishableparam,skuioparam,storagerequirement,ss,skueffioparam,sspresentation,itemlocdmdgroupmap,loc,uom,uomcategory,network,networkcap,sourcing,sourcingrequirement,sourcinguomconvfactor,histtransactual,histtransplan,cust,planpurch,planarriv,productionmethod,productionstep,altproductionstep,ddeprofile,dfuddemap,purchmethod,purchorder,supersession,dfumaintcopydfu,res,schedrcpts,schedrcptsdetail,transmode,transmodecap,vehicleload,vehicleloadline"
   staging:
