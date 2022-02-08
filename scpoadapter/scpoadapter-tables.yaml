@@ -58,7 +58,7 @@ scpo:
       tables_for_soft_delete: "hist"
     bydm_item:
       #version: "2021.3.0"
-      tables: "item,dmdunit,uomcategoryconvfactor"
+      tables: "item,dmdunit,uomcategoryconvfactor,udt_item01"
       tables_for_soft_delete: "item"
     bydm_itemhierarchylevelmember:
       tables: "dmdunit"
@@ -229,6 +229,9 @@ scpo:
         item:
           insert: intins_item
           update: intups_item
+        udt_item01:
+          insert: intins_udt_item01
+          update: intups_udt_item01        
         uomcategoryconvfactor:
           insert: intins_uomcatconvfact
           update: intups_uomcatconvfact
