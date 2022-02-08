@@ -3,10 +3,10 @@ output application/java
 var default_value = "###JDA_DEFAULT_VALUE###"
 
 ---
-(payload map (item, indexOfItem) -> { 
-		MS_BULK_REF: item.MS_BULK_REF,
+(payload map (itm, indexOfItem) -> { 
+		MS_BULK_REF: itm.MS_BULK_REF,
 		MS_REF: item.MS_REF, 	  	
-   		INTEGRATION_STAMP: item.INTEGRATION_STAMP,
+   		INTEGRATION_STAMP: itm.INTEGRATION_STAMP,
 		ITEM: itm.ITEM,
 		UDT_ATTRIBUTE_STR1: itm.UDT_ATTRIBUTE_STR1
   	
