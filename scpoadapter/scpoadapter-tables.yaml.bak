@@ -318,12 +318,6 @@ scpo:
         planarriv:
           insert: intins_planarriv
           update: intups_planarriv
-        udt_supply_plan_01:
-          insert: intins_udt_supply_plan_01
-          update: intups_udt_supply_plan_01
-        udt_supply_plan_02:
-          insert: intins_udt_supply_plan_02
-          update: intups_udt_supply_plan_02
         productionmethod:
           insert: intins_prodmethod
           update: intups_prodmethod
