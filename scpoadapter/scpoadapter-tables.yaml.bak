@@ -92,9 +92,11 @@ scpo:
       tables_for_soft_delete: "cust"
     bydm_plannedsupply:
       #version: "2021.2.0"
-      #tables: "planpurch,planarriv"
+      tables: "planpurch,planarriv"
+      tables_for_soft_delete: "planpurch,planarriv"
+    bydm_supplyplan:
+      #version: "2021.2.0"
       tables: "udt_supply_plan_01,udt_supply_plan_02"
-      #tables_for_soft_delete: "planpurch,planarriv"
       tables_for_soft_delete: "udt_supply_plan_01,udt_supply_plan_02"
     bydm_prepacksupply:
       tables: "allocsupplyprepack,allocsupplyprepackdetails"
@@ -318,6 +320,12 @@ scpo:
         planarriv:
           insert: intins_planarriv
           update: intups_planarriv
+        udt_supply_plan_01:
+          insert: intins_udt_supply_plan_01
+          update: intups_udt_supply_plan_01
+        udt_supply_plan_02:
+          insert: intins_udt_supply_plan_02
+          update: intups_udt_supply_plan_02
         productionmethod:
           insert: intins_prodmethod
           update: intups_prodmethod
