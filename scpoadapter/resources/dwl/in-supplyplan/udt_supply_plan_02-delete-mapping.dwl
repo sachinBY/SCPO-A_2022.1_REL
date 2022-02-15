@@ -7,5 +7,6 @@ payload map (planArriv, indexOfplanArriv) -> {
 	    INTEGRATION_STAMP: planArriv.INTEGRATION_STAMP,
 		ITEM: planArriv.ITEM,
 		DEST: planArriv.DEST,
+		SEQNUM: planArriv.SEQNUM,
 		(vars.deleteudc): 'Y'   
 }
