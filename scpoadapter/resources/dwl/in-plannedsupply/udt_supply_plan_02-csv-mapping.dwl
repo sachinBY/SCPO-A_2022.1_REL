@@ -6,7 +6,7 @@ var planarrivEntity = vars.entityMap.planarriv[0].planarriv[0]
 var lib = readUrl("classpath://config-repo/scpoadapter/resources/dwl/host-scpo-udc-mapping.dwl")
 ---
 if (payload."type"[0] == "PLAN_ARRIVAL")
-(payload filter ($.plannedSupplyIdCondition == 2) map (plannedsupply, indexofplannedsupply) -> {
+(payload filter ($.plannedSupplyIdCondition == "2") map (plannedsupply, indexofplannedsupply) -> {
  		udcs:(planarrivEntity map (value, index) -> {
 			scpoColumnName: value.scpoColumnName,
 			scpoColumnValue: if ((lib.mapHostToSCPO(plannedsupply, (value.hostColumnName splitBy "/"), 0)) != null) (lib.mapHostToSCPO(plannedsupply, (value.hostColumnName splitBy "/"), 0)) else default_value,
