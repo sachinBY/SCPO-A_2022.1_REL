@@ -26,7 +26,7 @@ var lib = readUrl("classpath://config-repo/scpoadapter/resources/dwl/host-scpo-u
 	"plannedSupply.plannedSupplyDetail.eff": funCaller.formatSCPOToGS1($.EFF),
 	"plannedSupply.plannedSupplyDetail.disc": funCaller.formatSCPOToGS1($.DISC),
 	"plannedSupply.plannedSupplyDetail.dmdpostdate": funCaller.formatSCPOToGS1($.DMDPOSTDATE),
-	"plannedSupply.plannedSupplyDetail.fcsthor.value": $.FCSTHOR
+	"plannedSupply.plannedSupplyDetail.fcsthor.value": $.FCSTHOR,
     (udcs map (udc , index) -> {
 		((udc.hostColumnName): lib.eval($[udc.scpoColumnName] , upper(udc.dataType)))
 	}),
