@@ -17,6 +17,11 @@ scpo:
       messagetype: 'plannedSupply'
       format: 'bydm'
       identifier: 'BYDM 2021.8.0'
+    dfu:
+      receivers: 'HOST.GLOBAL'
+      messagetype: 'supplyPlan'
+      format: 'csv'
+      identifier: 'BYDM 2021.8.0'
     vehicleloadline:
       receivers: 'HOST.GLOBAL'
       messagetype: 'plannedSupply'
