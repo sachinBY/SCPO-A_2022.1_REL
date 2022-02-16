@@ -22,6 +22,11 @@ scpo:
       messagetype: 'supplyPlan'
       format: 'csv'
       identifier: 'BYDM 2021.8.0'
+    udt_isp_time_setting:
+      receivers: 'HOST.GLOBAL'
+      messagetype: 'timeSetting'
+      format: 'csv'
+      identifier: 'BYDM 2021.8.0'
     vehicleloadline:
       receivers: 'HOST.GLOBAL'
       messagetype: 'plannedSupply'
