@@ -73,8 +73,8 @@ scpo:
       tables_for_soft_delete: "itemlocdmdgroupmap"  
     bydm_location:
       #version: "2021.2.0"
-      tables: "udc_loc02"
-      tables_for_soft_delete: "udc_loc02"
+      tables: "udt_loc02"
+      tables_for_soft_delete: "udt_loc02"
     bydm_measurement:
       tables: "uom,uomcategory"
       tables_for_soft_delete: "uom"    
