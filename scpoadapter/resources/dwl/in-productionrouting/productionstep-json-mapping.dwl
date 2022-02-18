@@ -27,22 +27,22 @@ flatten(flatten(flatten(payload.productionRouting default [] map (productionRout
 		PRODCOST: if (productionstep.itemUnitOperationCost != null) productionstep.itemUnitOperationCost as Number else default_value,
 		PRODDUR: if(productionstep.operationDuration.value != null) 
 						if(productionstep.operationDuration.timeMeasurementUnitCode != null) 		   		   			
-							if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "sec") 
+							if(lower(p("bydm.inbound.productionstep.timemeasurementunitcode")) startsWith "sec") 
 									
 										ceil(productionstep.operationDuration.value * conversionToSeconds[productionstep.operationDuration.timeMeasurementUnitCode][0]  as Number)
-							else if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "hour") 
+							else if(lower(p("bydm.inbound.productionstep.timemeasurementunitcode")) startsWith "hour") 
 									
 										ceil(productionstep.operationDuration.value * conversionToHours[productionstep.operationDuration.timeMeasurementUnitCode][0]  as Number)
-							else if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "day") 
+							else if(lower(p("bydm.inbound.productionstep.timemeasurementunitcode")) startsWith "day") 
 									
 										ceil(productionstep.operationDuration.value * conversionToDays[productionstep.operationDuration.timeMeasurementUnitCode][0]  as Number) 
-							else if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "week") 
+							else if(lower(p("bydm.inbound.productionstep.timemeasurementunitcode")) startsWith "week") 
 									
 										ceil(productionstep.operationDuration.value * conversionToWeeks[productionstep.operationDuration.timeMeasurementUnitCode][0]  as Number) 			
-							else if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "month") 
+							else if(lower(p("bydm.inbound.productionstep.timemeasurementunitcode")) startsWith "month") 
 									
 										ceil(productionstep.operationDuration.value * conversionToMonths[productionstep.operationDuration.timeMeasurementUnitCode][0]  as Number)
-							else if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "year") 
+							else if(lower(p("bydm.inbound.productionstep.timemeasurementunitcode")) startsWith "year") 
 									
 										ceil(productionstep.operationDuration.value * conversionToYears[productionstep.operationDuration.timeMeasurementUnitCode][0]  as Number)
 							else 
@@ -54,22 +54,22 @@ flatten(flatten(flatten(payload.productionRouting default [] map (productionRout
 						default_value,
 		LOADOFFSETDUR: if(productionstep.loadOffsetDuration.value != null) 
 						if(productionstep.loadOffsetDuration.timeMeasurementUnitCode != null) 		   		   			
-							if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "sec") 
+							if(lower(p("bydm.inbound.productionstep.timemeasurementunitcode")) startsWith "sec") 
 									
 										ceil(productionstep.loadOffsetDuration.value * conversionToSeconds[productionstep.loadOffsetDuration.timeMeasurementUnitCode][0]  as Number)
-							else if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "hour") 
+							else if(lower(p("bydm.inbound.productionstep.timemeasurementunitcode")) startsWith "hour") 
 									
 										ceil(productionstep.loadOffsetDuration.value * conversionToHours[productionstep.loadOffsetDuration.timeMeasurementUnitCode][0]  as Number)
-							else if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "day") 
+							else if(lower(p("bydm.inbound.productionstep.timemeasurementunitcode")) startsWith "day") 
 									
 										ceil(productionstep.loadOffsetDuration.value * conversionToDays[productionstep.loadOffsetDuration.timeMeasurementUnitCode][0]  as Number) 
-							else if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "week") 
+							else if(lower(p("bydm.inbound.productionstep.timemeasurementunitcode")) startsWith "week") 
 									
 										ceil(productionstep.loadOffsetDuration.value * conversionToWeeks[productionstep.loadOffsetDuration.timeMeasurementUnitCode][0]  as Number) 			
-							else if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "month") 
+							else if(lower(p("bydm.inbound.productionstep.timemeasurementunitcode")) startsWith "month") 
 									
 										ceil(productionstep.loadOffsetDuration.value * conversionToMonths[productionstep.loadOffsetDuration.timeMeasurementUnitCode][0]  as Number)
-							else if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "year") 
+							else if(lower(p("bydm.inbound.productionstep.timemeasurementunitcode")) startsWith "year") 
 									
 										ceil(productionstep.loadOffsetDuration.value * conversionToYears[productionstep.loadOffsetDuration.timeMeasurementUnitCode][0]  as Number)
 							else 
@@ -86,22 +86,22 @@ flatten(flatten(flatten(payload.productionRouting default [] map (productionRout
 		LOC: if (productionRouting.location != null) productionRouting.location else default_value,
 		PRODOFFSET: if(productionstep.productionOffsetDuration.value != null) 
 						if(productionstep.productionOffsetDuration.timeMeasurementUnitCode != null) 		   		   			
-							if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "sec") 
+							if(lower(p("bydm.inbound.productionstep.timemeasurementunitcode")) startsWith "sec") 
 									
 										ceil(productionstep.productionOffsetDuration.value * conversionToSeconds[productionstep.productionOffsetDuration.timeMeasurementUnitCode][0]  as Number)
-							else if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "hour") 
+							else if(lower(p("bydm.inbound.productionstep.timemeasurementunitcode")) startsWith "hour") 
 									
 										ceil(productionstep.productionOffsetDuration.value * conversionToHours[productionstep.productionOffsetDuration.timeMeasurementUnitCode][0]  as Number)
-							else if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "day") 
+							else if(lower(p("bydm.inbound.productionstep.timemeasurementunitcode")) startsWith "day") 
 									
 										ceil(productionstep.productionOffsetDuration.value * conversionToDays[productionstep.productionOffsetDuration.timeMeasurementUnitCode][0]  as Number) 
-							else if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "week") 
+							else if(lower(p("bydm.inbound.productionstep.timemeasurementunitcode")) startsWith "week") 
 									
 										ceil(productionstep.productionOffsetDuration.value * conversionToWeeks[productionstep.productionOffsetDuration.timeMeasurementUnitCode][0]  as Number) 			
-							else if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "month") 
+							else if(lower(p("bydm.inbound.productionstep.timemeasurementunitcode")) startsWith "month") 
 									
 										ceil(productionstep.productionOffsetDuration.value * conversionToMonths[productionstep.productionOffsetDuration.timeMeasurementUnitCode][0]  as Number)
-							else if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "year") 
+							else if(lower(p("bydm.inbound.productionstep.timemeasurementunitcode")) startsWith "year") 
 									
 										ceil(productionstep.productionOffsetDuration.value * conversionToYears[productionstep.productionOffsetDuration.timeMeasurementUnitCode][0]  as Number)
 							else 

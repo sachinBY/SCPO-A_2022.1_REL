@@ -19,22 +19,22 @@ var conversionToYears=vars.codeMap."time-units-years-conversion"
 		  LOC: $.itemLocationId.location.primaryId,
 		  BUFFERLEADTIME: if($.planningParameters.supplyLeadBufferDuration.value != null) 
 						if($.planningParameters.supplyLeadBufferDuration.timeMeasurementUnitCode != null) 		   		   			
-							if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "sec") 
+							if(lower(p("bydm.inbound.skuplanningparam.timemeasurementunitcode")) startsWith "sec") 
 									
 										ceil($.planningParameters.supplyLeadBufferDuration.value * conversionToSeconds[$.planningParameters.supplyLeadBufferDuration.timeMeasurementUnitCode][0]  as Number)
-							else if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "hour") 
+							else if(lower(p("bydm.inbound.skuplanningparam.timemeasurementunitcode")) startsWith "hour") 
 									
 										ceil($.planningParameters.supplyLeadBufferDuration.value * conversionToHours[$.planningParameters.supplyLeadBufferDuration.timeMeasurementUnitCode][0]  as Number)
-							else if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "day") 
+							else if(lower(p("bydm.inbound.skuplanningparam.timemeasurementunitcode")) startsWith "day") 
 									
 										ceil($.planningParameters.supplyLeadBufferDuration.value * conversionToDays[$.planningParameters.supplyLeadBufferDuration.timeMeasurementUnitCode][0]  as Number) 
-							else if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "week") 
+							else if(lower(p("bydm.inbound.skuplanningparam.timemeasurementunitcode")) startsWith "week") 
 									
 										ceil($.planningParameters.supplyLeadBufferDuration.value * conversionToWeeks[$.planningParameters.supplyLeadBufferDuration.timeMeasurementUnitCode][0]  as Number) 			
-							else if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "month") 
+							else if(lower(p("bydm.inbound.skuplanningparam.timemeasurementunitcode")) startsWith "month") 
 									
 										ceil($.planningParameters.supplyLeadBufferDuration.value * conversionToMonths[$.planningParameters.supplyLeadBufferDuration.timeMeasurementUnitCode][0]  as Number)
-							else if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "year") 
+							else if(lower(p("bydm.inbound.skuplanningparam.timemeasurementunitcode")) startsWith "year") 
 									
 										ceil($.planningParameters.supplyLeadBufferDuration.value * conversionToYears[$.planningParameters.supplyLeadBufferDuration.timeMeasurementUnitCode][0]  as Number)
 							else 
@@ -47,22 +47,22 @@ var conversionToYears=vars.codeMap."time-units-years-conversion"
 
 		  DRPFRZDUR: if($.planningParameters.receiptFrozenDuration.value != null) 
 						if($.planningParameters.receiptFrozenDuration.timeMeasurementUnitCode != null) 		   		   			
-							if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "sec") 
+							if(lower(p("bydm.inbound.skuplanningparam.timemeasurementunitcode")) startsWith "sec") 
 									
 										ceil($.planningParameters.receiptFrozenDuration.value * conversionToSeconds[$.planningParameters.receiptFrozenDuration.timeMeasurementUnitCode][0]  as Number)
-							else if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "hour") 
+							else if(lower(p("bydm.inbound.skuplanningparam.timemeasurementunitcode")) startsWith "hour") 
 									
 										ceil($.planningParameters.receiptFrozenDuration.value * conversionToHours[$.planningParameters.receiptFrozenDuration.timeMeasurementUnitCode][0]  as Number)
-							else if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "day") 
+							else if(lower(p("bydm.inbound.skuplanningparam.timemeasurementunitcode")) startsWith "day") 
 									
 										ceil($.planningParameters.receiptFrozenDuration.value * conversionToDays[$.planningParameters.receiptFrozenDuration.timeMeasurementUnitCode][0]  as Number) 
-							else if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "week") 
+							else if(lower(p("bydm.inbound.skuplanningparam.timemeasurementunitcode")) startsWith "week") 
 									
 										ceil($.planningParameters.receiptFrozenDuration.value * conversionToWeeks[$.planningParameters.receiptFrozenDuration.timeMeasurementUnitCode][0]  as Number) 			
-							else if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "month") 
+							else if(lower(p("bydm.inbound.skuplanningparam.timemeasurementunitcode")) startsWith "month") 
 									
 										ceil($.planningParameters.receiptFrozenDuration.value * conversionToMonths[$.planningParameters.receiptFrozenDuration.timeMeasurementUnitCode][0]  as Number)
-							else if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "year") 
+							else if(lower(p("bydm.inbound.skuplanningparam.timemeasurementunitcode")) startsWith "year") 
 									
 										ceil($.planningParameters.receiptFrozenDuration.value * conversionToYears[$.planningParameters.receiptFrozenDuration.timeMeasurementUnitCode][0]  as Number)
 							else 
@@ -80,22 +80,22 @@ var conversionToYears=vars.codeMap."time-units-years-conversion"
 		  MAXOH: $.planningParameters.maximumOnHandQuantity.value,
 		  MFGFRZDUR: if($.planningParameters.manufactureDuration.value != null) 
 						if($.planningParameters.manufactureDuration.timeMeasurementUnitCode != null) 		   		   			
-							if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "sec") 
+							if(lower(p("bydm.inbound.skuplanningparam.timemeasurementunitcode")) startsWith "sec") 
 									
 										ceil($.planningParameters.manufactureDuration.value * conversionToSeconds[$.planningParameters.manufactureDuration.timeMeasurementUnitCode][0]  as Number)
-							else if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "hour") 
+							else if(lower(p("bydm.inbound.skuplanningparam.timemeasurementunitcode")) startsWith "hour") 
 									
 										ceil($.planningParameters.manufactureDuration.value * conversionToHours[$.planningParameters.manufactureDuration.timeMeasurementUnitCode][0]  as Number)
-							else if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "day") 
+							else if(lower(p("bydm.inbound.skuplanningparam.timemeasurementunitcode")) startsWith "day") 
 									
 										ceil($.planningParameters.manufactureDuration.value * conversionToDays[$.planningParameters.manufactureDuration.timeMeasurementUnitCode][0]  as Number) 
-							else if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "week") 
+							else if(lower(p("bydm.inbound.skuplanningparam.timemeasurementunitcode")) startsWith "week") 
 									
 										ceil($.planningParameters.manufactureDuration.value * conversionToWeeks[$.planningParameters.manufactureDuration.timeMeasurementUnitCode][0]  as Number) 			
-							else if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "month") 
+							else if(lower(p("bydm.inbound.skuplanningparam.timemeasurementunitcode")) startsWith "month") 
 									
 										ceil($.planningParameters.manufactureDuration.value * conversionToMonths[$.planningParameters.manufactureDuration.timeMeasurementUnitCode][0]  as Number)
-							else if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "year") 
+							else if(lower(p("bydm.inbound.skuplanningparam.timemeasurementunitcode")) startsWith "year") 
 									
 										ceil($.planningParameters.manufactureDuration.value * conversionToYears[$.planningParameters.manufactureDuration.timeMeasurementUnitCode][0]  as Number)
 							else 
@@ -114,22 +114,22 @@ var conversionToYears=vars.codeMap."time-units-years-conversion"
 		  					ceil($.planningParameters.shrinkageFactor) else null,
 		  MPSCOVDUR: if($.planningParameters.supplyCoverageDuration.value != null) 
 						if($.planningParameters.supplyCoverageDuration.timeMeasurementUnitCode != null) 		   		   			
-							if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "sec") 
+							if(lower(p("bydm.inbound.skuplanningparam.timemeasurementunitcode")) startsWith "sec") 
 									
 										ceil($.planningParameters.supplyCoverageDuration.value * conversionToSeconds[$.planningParameters.supplyCoverageDuration.timeMeasurementUnitCode][0]  as Number)
-							else if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "hour") 
+							else if(lower(p("bydm.inbound.skuplanningparam.timemeasurementunitcode")) startsWith "hour") 
 									
 										ceil($.planningParameters.supplyCoverageDuration.value * conversionToHours[$.planningParameters.supplyCoverageDuration.timeMeasurementUnitCode][0]  as Number)
-							else if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "day") 
+							else if(lower(p("bydm.inbound.skuplanningparam.timemeasurementunitcode")) startsWith "day") 
 									
 										ceil($.planningParameters.supplyCoverageDuration.value * conversionToDays[$.planningParameters.supplyCoverageDuration.timeMeasurementUnitCode][0]  as Number) 
-							else if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "week") 
+							else if(lower(p("bydm.inbound.skuplanningparam.timemeasurementunitcode")) startsWith "week") 
 									
 										ceil($.planningParameters.supplyCoverageDuration.value * conversionToWeeks[$.planningParameters.supplyCoverageDuration.timeMeasurementUnitCode][0]  as Number) 			
-							else if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "month") 
+							else if(lower(p("bydm.inbound.skuplanningparam.timemeasurementunitcode")) startsWith "month") 
 									
 										ceil($.planningParameters.supplyCoverageDuration.value * conversionToMonths[$.planningParameters.supplyCoverageDuration.timeMeasurementUnitCode][0]  as Number)
-							else if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "year") 
+							else if(lower(p("bydm.inbound.skuplanningparam.timemeasurementunitcode")) startsWith "year") 
 									
 										ceil($.planningParameters.supplyCoverageDuration.value * conversionToYears[$.planningParameters.supplyCoverageDuration.timeMeasurementUnitCode][0]  as Number)
 							else 
@@ -143,22 +143,22 @@ var conversionToYears=vars.codeMap."time-units-years-conversion"
 		  ORDERINGCOST: $.planningParameters.orderingCost.value,
 		  DRPCOVDUR: if($.planningParameters.receiptCoverageDuration.value != null) 
 						if($.planningParameters.receiptCoverageDuration.timeMeasurementUnitCode != null) 		   		   			
-							if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "sec") 
+							if(lower(p("bydm.inbound.skuplanningparam.timemeasurementunitcode")) startsWith "sec") 
 									
 										ceil($.planningParameters.receiptCoverageDuration.value * conversionToSeconds[$.planningParameters.receiptCoverageDuration.timeMeasurementUnitCode][0]  as Number)
-							else if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "hour") 
+							else if(lower(p("bydm.inbound.skuplanningparam.timemeasurementunitcode")) startsWith "hour") 
 									
 										ceil($.planningParameters.receiptCoverageDuration.value * conversionToHours[$.planningParameters.receiptCoverageDuration.timeMeasurementUnitCode][0]  as Number)
-							else if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "day") 
+							else if(lower(p("bydm.inbound.skuplanningparam.timemeasurementunitcode")) startsWith "day") 
 									
 										ceil($.planningParameters.receiptCoverageDuration.value * conversionToDays[$.planningParameters.receiptCoverageDuration.timeMeasurementUnitCode][0]  as Number) 
-							else if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "week") 
+							else if(lower(p("bydm.inbound.skuplanningparam.timemeasurementunitcode")) startsWith "week") 
 									
 										ceil($.planningParameters.receiptCoverageDuration.value * conversionToWeeks[$.planningParameters.receiptCoverageDuration.timeMeasurementUnitCode][0]  as Number) 			
-							else if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "month") 
+							else if(lower(p("bydm.inbound.skuplanningparam.timemeasurementunitcode")) startsWith "month") 
 									
 										ceil($.planningParameters.receiptCoverageDuration.value * conversionToMonths[$.planningParameters.receiptCoverageDuration.timeMeasurementUnitCode][0]  as Number)
-							else if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "year") 
+							else if(lower(p("bydm.inbound.skuplanningparam.timemeasurementunitcode")) startsWith "year") 
 									
 										ceil($.planningParameters.receiptCoverageDuration.value * conversionToYears[$.planningParameters.receiptCoverageDuration.timeMeasurementUnitCode][0]  as Number)
 							else 

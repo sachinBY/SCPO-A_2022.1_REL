@@ -9,7 +9,7 @@ import * from dw::core::Strings
 		receiver: (splitBy(p("scpo.outbound.depdmdstatic.receivers"), ",") map {
 			(receiver: $) if (!isEmpty($))
 		}).receiver,
-		messageVersion: p('scpo.outbound.depdmdstatic.identifier'),
+		messageVersion: "BYDM 2021.5.0",
 		messageId: uuid(),
 		"type": p("scpo.outbound.depdmdstatic.messagetype"),
 		creationDateAndTime: now()

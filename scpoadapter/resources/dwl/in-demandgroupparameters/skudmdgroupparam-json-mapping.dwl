@@ -28,22 +28,22 @@ flatten(payload.demandGroupParameters map(dmdgrpParams, indexDmdParams) ->  {
 		HIGHERBUCKETDMDCAL: if(dmdGroupPrams.parentDemandCalendar != null) dmdGroupPrams.parentDemandCalendar else default_value,
 		MINOLTDUR: if(dmdGroupPrams.minimumOrderLeadTimeDuration.value != null) 
 						if(dmdGroupPrams.minimumOrderLeadTimeDuration.timeMeasurementUnitCode != null) 		   		   			
-							if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "sec") 
+							if(lower(p("bydm.inbound.skudemandgruopparam.timemeasurementunitcode")) startsWith "sec") 
 									
 										ceil(dmdGroupPrams.minimumOrderLeadTimeDuration.value * conversionToSeconds[dmdGroupPrams.minimumOrderLeadTimeDuration.timeMeasurementUnitCode][0]  as Number)
-							else if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "hour") 
+							else if(lower(p("bydm.inbound.skudemandgruopparam.timemeasurementunitcode")) startsWith "hour") 
 									
 										ceil(dmdGroupPrams.minimumOrderLeadTimeDuration.value * conversionToHours[dmdGroupPrams.minimumOrderLeadTimeDuration.timeMeasurementUnitCode][0]  as Number)
-							else if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "day") 
+							else if(lower(p("bydm.inbound.skudemandgruopparam.timemeasurementunitcode")) startsWith "day") 
 									
 										ceil(dmdGroupPrams.minimumOrderLeadTimeDuration.value * conversionToDays[dmdGroupPrams.minimumOrderLeadTimeDuration.timeMeasurementUnitCode][0]  as Number) 
-							else if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "week") 
+							else if(lower(p("bydm.inbound.skudemandgruopparam.timemeasurementunitcode")) startsWith "week") 
 									
 										ceil(dmdGroupPrams.minimumOrderLeadTimeDuration.value * conversionToWeeks[dmdGroupPrams.minimumOrderLeadTimeDuration.timeMeasurementUnitCode][0]  as Number) 			
-							else if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "month") 
+							else if(lower(p("bydm.inbound.skudemandgruopparam.timemeasurementunitcode")) startsWith "month") 
 									
 										ceil(dmdGroupPrams.minimumOrderLeadTimeDuration.value * conversionToMonths[dmdGroupPrams.minimumOrderLeadTimeDuration.timeMeasurementUnitCode][0]  as Number)
-							else if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "year") 
+							else if(lower(p("bydm.inbound.skudemandgruopparam.timemeasurementunitcode")) startsWith "year") 
 									
 										ceil(dmdGroupPrams.minimumOrderLeadTimeDuration.value * conversionToYears[dmdGroupPrams.minimumOrderLeadTimeDuration.timeMeasurementUnitCode][0]  as Number)
 							else 
@@ -56,22 +56,22 @@ flatten(payload.demandGroupParameters map(dmdgrpParams, indexDmdParams) ->  {
 
 		MAXOLTDUR:if(dmdGroupPrams.maximumOrderLeadTimeDuration.value != null) 
 						if(dmdGroupPrams.maximumOrderLeadTimeDuration.timeMeasurementUnitCode != null) 		   		   			
-							if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "sec") 
+							if(lower(p("bydm.inbound.skudemandgruopparam.timemeasurementunitcode")) startsWith "sec") 
 									
 										ceil(dmdGroupPrams.maximumOrderLeadTimeDuration.value * conversionToSeconds[dmdGroupPrams.maximumOrderLeadTimeDuration.timeMeasurementUnitCode][0]  as Number)
-							else if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "hour") 
+							else if(lower(p("bydm.inbound.skudemandgruopparam.timemeasurementunitcode")) startsWith "hour") 
 									
 										ceil(dmdGroupPrams.maximumOrderLeadTimeDuration.value * conversionToHours[dmdGroupPrams.maximumOrderLeadTimeDuration.timeMeasurementUnitCode][0]  as Number)
-							else if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "day") 
+							else if(lower(p("bydm.inbound.skudemandgruopparam.timemeasurementunitcode")) startsWith "day") 
 									
 										ceil(dmdGroupPrams.maximumOrderLeadTimeDuration.value * conversionToDays[dmdGroupPrams.maximumOrderLeadTimeDuration.timeMeasurementUnitCode][0]  as Number) 
-							else if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "week") 
+							else if(lower(p("bydm.inbound.skudemandgruopparam.timemeasurementunitcode")) startsWith "week") 
 									
 										ceil(dmdGroupPrams.maximumOrderLeadTimeDuration.value * conversionToWeeks[dmdGroupPrams.maximumOrderLeadTimeDuration.timeMeasurementUnitCode][0]  as Number) 			
-							else if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "month") 
+							else if(lower(p("bydm.inbound.skudemandgruopparam.timemeasurementunitcode")) startsWith "month") 
 									
 										ceil(dmdGroupPrams.maximumOrderLeadTimeDuration.value * conversionToMonths[dmdGroupPrams.maximumOrderLeadTimeDuration.timeMeasurementUnitCode][0]  as Number)
-							else if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "year") 
+							else if(lower(p("bydm.inbound.skudemandgruopparam.timemeasurementunitcode")) startsWith "year") 
 									
 										ceil(dmdGroupPrams.maximumOrderLeadTimeDuration.value * conversionToYears[dmdGroupPrams.maximumOrderLeadTimeDuration.timeMeasurementUnitCode][0]  as Number)
 							else 

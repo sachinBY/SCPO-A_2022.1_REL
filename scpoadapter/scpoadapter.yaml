@@ -3,7 +3,25 @@ bydm:
     validation: "true"
   inbound:
     #possible values are seconds,minutes,hours,days,weeks,months,year..default will be minutes if configured as ""
-    default:
+    skudemandgruopparam:
+      timemeasurementunitcode: "sec"
+    skueffinventoryparam:
+      timemeasurementunitcode: "sec"
+    skueffioparam:
+      timemeasurementunitcode: "sec"
+    skuperishableparam:
+      timemeasurementunitcode: "sec"
+    skuplanningparam:
+      timemeasurementunitcode: "sec"
+    skusafetystockparam:
+      timemeasurementunitcode: "sec"
+    sourcing:
+      timemeasurementunitcode: "sec"
+    productionstep:
+      timemeasurementunitcode: "sec"
+    purchmethod:
+      timemeasurementunitcode: "sec"
+    resource:
       timemeasurementunitcode: "sec"         
   message:
     size: "100"     

@@ -9,7 +9,7 @@ var udcs = vars.outboundUDCs.sku[0].sku[0]
 		receiver: (splitBy(p("scpo.outbound.sku.receivers"), ",") map {
 			(receiver: $) if (!isEmpty($))
 		}).receiver,
-		messageVersion: p('scpo.outbound.sku.identifier'),
+		messageVersion: "BYDM 2021.10.0",
 		messageId: uuid(),
 		"type": p("scpo.outbound.sku.messagetype"),
 		creationDateAndTime: now()

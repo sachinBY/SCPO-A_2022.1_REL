@@ -19,22 +19,22 @@ var conversionToYears=vars.codeMap."time-units-years-conversion"
 	  LOC: $.itemLocationId.location.primaryId,
 	  MINSHELFLIFEDUR: if($.perishableParameters.minimumShelfLifeDuration.value != null) 
 						if($.perishableParameters.minimumShelfLifeDuration.timeMeasurementUnitCode != null) 		   		   			
-							if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "sec") 
+							if(lower(p("bydm.inbound.skuperishableparam.timemeasurementunitcode")) startsWith "sec") 
 									
 										ceil($.perishableParameters.minimumShelfLifeDuration.value * conversionToSeconds[$.perishableParameters.minimumShelfLifeDuration.timeMeasurementUnitCode][0]  as Number)
-							else if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "hour") 
+							else if(lower(p("bydm.inbound.skuperishableparam.timemeasurementunitcode")) startsWith "hour") 
 									
 										ceil($.perishableParameters.minimumShelfLifeDuration.value * conversionToHours[$.perishableParameters.minimumShelfLifeDuration.timeMeasurementUnitCode][0]  as Number)
-							else if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "day") 
+							else if(lower(p("bydm.inbound.skuperishableparam.timemeasurementunitcode")) startsWith "day") 
 									
 										ceil($.perishableParameters.minimumShelfLifeDuration.value * conversionToDays[$.perishableParameters.minimumShelfLifeDuration.timeMeasurementUnitCode][0]  as Number) 
-							else if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "week") 
+							else if(lower(p("bydm.inbound.skuperishableparam.timemeasurementunitcode")) startsWith "week") 
 									
 										ceil($.perishableParameters.minimumShelfLifeDuration.value * conversionToWeeks[$.perishableParameters.minimumShelfLifeDuration.timeMeasurementUnitCode][0]  as Number) 			
-							else if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "month") 
+							else if(lower(p("bydm.inbound.skuperishableparam.timemeasurementunitcode")) startsWith "month") 
 									
 										ceil($.perishableParameters.minimumShelfLifeDuration.value * conversionToMonths[$.perishableParameters.minimumShelfLifeDuration.timeMeasurementUnitCode][0]  as Number)
-							else if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "year") 
+							else if(lower(p("bydm.inbound.skuperishableparam.timemeasurementunitcode")) startsWith "year") 
 									
 										ceil($.perishableParameters.minimumShelfLifeDuration.value * conversionToYears[$.perishableParameters.minimumShelfLifeDuration.timeMeasurementUnitCode][0]  as Number)
 							else 
@@ -47,22 +47,22 @@ var conversionToYears=vars.codeMap."time-units-years-conversion"
 
 	  MINSHIPSHELFLIFEDUR: if($.perishableParameters.minimumShipmentShelfLifeDuration.value != null) 
 						if($.perishableParameters.minimumShipmentShelfLifeDuration.timeMeasurementUnitCode != null) 		   		   			
-							if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "sec") 
+							if(lower(p("bydm.inbound.skuperishableparam.timemeasurementunitcode")) startsWith "sec") 
 									
 										ceil($.perishableParameters.minimumShipmentShelfLifeDuration.value * conversionToSeconds[$.perishableParameters.minimumShipmentShelfLifeDuration.timeMeasurementUnitCode][0]  as Number)
-							else if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "hour") 
+							else if(lower(p("bydm.inbound.skuperishableparam.timemeasurementunitcode")) startsWith "hour") 
 									
 										ceil($.perishableParameters.minimumShipmentShelfLifeDuration.value * conversionToHours[$.perishableParameters.minimumShipmentShelfLifeDuration.timeMeasurementUnitCode][0]  as Number)
-							else if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "day") 
+							else if(lower(p("bydm.inbound.skuperishableparam.timemeasurementunitcode")) startsWith "day") 
 									
 										ceil($.perishableParameters.minimumShipmentShelfLifeDuration.value * conversionToDays[$.perishableParameters.minimumShipmentShelfLifeDuration.timeMeasurementUnitCode][0]  as Number) 
-							else if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "week") 
+							else if(lower(p("bydm.inbound.skuperishableparam.timemeasurementunitcode")) startsWith "week") 
 									
 										ceil($.perishableParameters.minimumShipmentShelfLifeDuration.value * conversionToWeeks[$.perishableParameters.minimumShipmentShelfLifeDuration.timeMeasurementUnitCode][0]  as Number) 			
-							else if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "month") 
+							else if(lower(p("bydm.inbound.skuperishableparam.timemeasurementunitcode")) startsWith "month") 
 									
 										ceil($.perishableParameters.minimumShipmentShelfLifeDuration.value * conversionToMonths[$.perishableParameters.minimumShipmentShelfLifeDuration.timeMeasurementUnitCode][0]  as Number)
-							else if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "year") 
+							else if(lower(p("bydm.inbound.skuperishableparam.timemeasurementunitcode")) startsWith "year") 
 									
 										ceil($.perishableParameters.minimumShipmentShelfLifeDuration.value * conversionToYears[$.perishableParameters.minimumShipmentShelfLifeDuration.timeMeasurementUnitCode][0]  as Number)
 							else 
@@ -75,22 +75,22 @@ var conversionToYears=vars.codeMap."time-units-years-conversion"
 
 	  SHELFLIFEDUR: if($.perishableParameters.shelfLifeDuration.value != null) 
 						if($.perishableParameters.shelfLifeDuration.timeMeasurementUnitCode != null) 		   		   			
-							if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "sec") 
+							if(lower(p("bydm.inbound.skuperishableparam.timemeasurementunitcode")) startsWith "sec") 
 									
 										ceil($.perishableParameters.shelfLifeDuration.value * conversionToSeconds[$.perishableParameters.shelfLifeDuration.timeMeasurementUnitCode][0]  as Number)
-							else if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "hour") 
+							else if(lower(p("bydm.inbound.skuperishableparam.timemeasurementunitcode")) startsWith "hour") 
 									
 										ceil($.perishableParameters.shelfLifeDuration.value * conversionToHours[$.perishableParameters.shelfLifeDuration.timeMeasurementUnitCode][0]  as Number)
-							else if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "day") 
+							else if(lower(p("bydm.inbound.skuperishableparam.timemeasurementunitcode")) startsWith "day") 
 									
 										ceil($.perishableParameters.shelfLifeDuration.value * conversionToDays[$.perishableParameters.shelfLifeDuration.timeMeasurementUnitCode][0]  as Number) 
-							else if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "week") 
+							else if(lower(p("bydm.inbound.skuperishableparam.timemeasurementunitcode")) startsWith "week") 
 									
 										ceil($.perishableParameters.shelfLifeDuration.value * conversionToWeeks[$.perishableParameters.shelfLifeDuration.timeMeasurementUnitCode][0]  as Number) 			
-							else if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "month") 
+							else if(lower(p("bydm.inbound.skuperishableparam.timemeasurementunitcode")) startsWith "month") 
 									
 										ceil($.perishableParameters.shelfLifeDuration.value * conversionToMonths[$.perishableParameters.shelfLifeDuration.timeMeasurementUnitCode][0]  as Number)
-							else if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "year") 
+							else if(lower(p("bydm.inbound.skuperishableparam.timemeasurementunitcode")) startsWith "year") 
 									
 										ceil($.perishableParameters.shelfLifeDuration.value * conversionToYears[$.perishableParameters.shelfLifeDuration.timeMeasurementUnitCode][0]  as Number)
 							else 

@@ -24,22 +24,22 @@ arr:($.effectiveInventoryParameters map(EFF,index)->{
 	MINSSQTY:EFF.minimumSafetyStockQuantity.value,
 	SSCOVDUR:if(EFF.safetyStockCoverageDuration.value != null) 
 						if(EFF.safetyStockCoverageDuration.timeMeasurementUnitCode != null) 		   		   			
-							if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "sec") 
+							if(lower(p("bydm.inbound.skueffinventoryparam.timemeasurementunitcode")) startsWith "sec") 
 									
 										ceil(EFF.safetyStockCoverageDuration.value * conversionToSeconds[EFF.safetyStockCoverageDuration.timeMeasurementUnitCode][0]  as Number)
-							else if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "hour") 
+							else if(lower(p("bydm.inbound.skueffinventoryparam.timemeasurementunitcode")) startsWith "hour") 
 									
 										ceil(EFF.safetyStockCoverageDuration.value * conversionToHours[EFF.safetyStockCoverageDuration.timeMeasurementUnitCode][0]  as Number)
-							else if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "day") 
+							else if(lower(p("bydm.inbound.skueffinventoryparam.timemeasurementunitcode")) startsWith "day") 
 									
 										ceil(EFF.safetyStockCoverageDuration.value * conversionToDays[EFF.safetyStockCoverageDuration.timeMeasurementUnitCode][0]  as Number) 
-							else if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "week") 
+							else if(lower(p("bydm.inbound.skueffinventoryparam.timemeasurementunitcode")) startsWith "week") 
 									
 										ceil(EFF.safetyStockCoverageDuration.value * conversionToWeeks[EFF.safetyStockCoverageDuration.timeMeasurementUnitCode][0]  as Number) 			
-							else if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "month") 
+							else if(lower(p("bydm.inbound.skueffinventoryparam.timemeasurementunitcode")) startsWith "month") 
 									
 										ceil(EFF.safetyStockCoverageDuration.value * conversionToMonths[EFF.safetyStockCoverageDuration.timeMeasurementUnitCode][0]  as Number)
-							else if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "year") 
+							else if(lower(p("bydm.inbound.skueffinventoryparam.timemeasurementunitcode")) startsWith "year") 
 									
 										ceil(EFF.safetyStockCoverageDuration.value * conversionToYears[EFF.safetyStockCoverageDuration.timeMeasurementUnitCode][0]  as Number)
 							else 

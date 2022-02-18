@@ -21,22 +21,22 @@ var conversionToYears=vars.codeMap."time-units-years-conversion"
   MINSS: $.safetyStockParameters.minimumSafetyStock.value,
   SSCOV: if($.safetyStockParameters.safetyStockCoverageDuration.value != null) 
 						if($.safetyStockParameters.safetyStockCoverageDuration.timeMeasurementUnitCode != null) 		   		   			
-							if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "sec") 
+							if(lower(p("bydm.inbound.skusafetystockparam.timemeasurementunitcode")) startsWith "sec") 
 									
 										ceil($.safetyStockParameters.safetyStockCoverageDuration.value * conversionToSeconds[$.safetyStockParameters.safetyStockCoverageDuration.timeMeasurementUnitCode][0]  as Number)
-							else if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "hour") 
+							else if(lower(p("bydm.inbound.skusafetystockparam.timemeasurementunitcode")) startsWith "hour") 
 									
 										ceil($.safetyStockParameters.safetyStockCoverageDuration.value * conversionToHours[$.safetyStockParameters.safetyStockCoverageDuration.timeMeasurementUnitCode][0]  as Number)
-							else if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "day") 
+							else if(lower(p("bydm.inbound.skusafetystockparam.timemeasurementunitcode")) startsWith "day") 
 									
 										ceil($.safetyStockParameters.safetyStockCoverageDuration.value * conversionToDays[$.safetyStockParameters.safetyStockCoverageDuration.timeMeasurementUnitCode][0]  as Number) 
-							else if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "week") 
+							else if(lower(p("bydm.inbound.skusafetystockparam.timemeasurementunitcode")) startsWith "week") 
 									
 										ceil($.safetyStockParameters.safetyStockCoverageDuration.value * conversionToWeeks[$.safetyStockParameters.safetyStockCoverageDuration.timeMeasurementUnitCode][0]  as Number) 			
-							else if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "month") 
+							else if(lower(p("bydm.inbound.skusafetystockparam.timemeasurementunitcode")) startsWith "month") 
 									
 										ceil($.safetyStockParameters.safetyStockCoverageDuration.value * conversionToMonths[$.safetyStockParameters.safetyStockCoverageDuration.timeMeasurementUnitCode][0]  as Number)
-							else if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "year") 
+							else if(lower(p("bydm.inbound.skusafetystockparam.timemeasurementunitcode")) startsWith "year") 
 									
 										ceil($.safetyStockParameters.safetyStockCoverageDuration.value * conversionToYears[$.safetyStockParameters.safetyStockCoverageDuration.timeMeasurementUnitCode][0]  as Number)
 							else 
@@ -49,22 +49,22 @@ var conversionToYears=vars.codeMap."time-units-years-conversion"
   STATSSCSL: $.safetyStockParameters.safetyStockCustomerServiceLevel,
   ACCUMDUR: if($.safetyStockParameters.accumulationDuration.value != null) 
 						if($.safetyStockParameters.accumulationDuration.timeMeasurementUnitCode != null) 		   		   			
-							if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "sec") 
+							if(lower(p("bydm.inbound.skusafetystockparam.timemeasurementunitcode")) startsWith "sec") 
 									
 										ceil($.safetyStockParameters.accumulationDuration.value * conversionToSeconds[$.safetyStockParameters.accumulationDuration.timeMeasurementUnitCode][0]  as Number)
-							else if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "hour") 
+							else if(lower(p("bydm.inbound.skusafetystockparam.timemeasurementunitcode")) startsWith "hour") 
 									
 										ceil($.safetyStockParameters.accumulationDuration.value * conversionToHours[$.safetyStockParameters.accumulationDuration.timeMeasurementUnitCode][0]  as Number)
-							else if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "day") 
+							else if(lower(p("bydm.inbound.skusafetystockparam.timemeasurementunitcode")) startsWith "day") 
 									
 										ceil($.safetyStockParameters.accumulationDuration.value * conversionToDays[$.safetyStockParameters.accumulationDuration.timeMeasurementUnitCode][0]  as Number) 
-							else if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "week") 
+							else if(lower(p("bydm.inbound.skusafetystockparam.timemeasurementunitcode")) startsWith "week") 
 									
 										ceil($.safetyStockParameters.accumulationDuration.value * conversionToWeeks[$.safetyStockParameters.accumulationDuration.timeMeasurementUnitCode][0]  as Number) 			
-							else if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "month") 
+							else if(lower(p("bydm.inbound.skusafetystockparam.timemeasurementunitcode")) startsWith "month") 
 									
 										ceil($.safetyStockParameters.accumulationDuration.value * conversionToMonths[$.safetyStockParameters.accumulationDuration.timeMeasurementUnitCode][0]  as Number)
-							else if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "year") 
+							else if(lower(p("bydm.inbound.skusafetystockparam.timemeasurementunitcode")) startsWith "year") 
 									
 										ceil($.safetyStockParameters.accumulationDuration.value * conversionToYears[$.safetyStockParameters.accumulationDuration.timeMeasurementUnitCode][0]  as Number)
 							else 

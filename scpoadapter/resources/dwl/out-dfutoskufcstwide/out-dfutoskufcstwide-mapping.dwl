@@ -13,7 +13,7 @@ var n = p("scpo.outbound.dfutoskufcstwide.periods") as Number
 		messageId: uuid(),
 		"type": p('scpo.outbound.dfutoskufcstwide.messagetype'),
 		creationDateAndTime: now(),
-		messageVersion: p('scpo.outbound.dfutoskufcstwide.identifier')
+		messageVersion: "BYDM 2021.5.0"
 		},
 		
 		forecast2:flatten((1 to n map(item,index)->{

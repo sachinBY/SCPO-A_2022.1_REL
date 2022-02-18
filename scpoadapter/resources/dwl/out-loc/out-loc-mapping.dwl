@@ -10,7 +10,7 @@ import * from dw::core::Strings
 		receiver: (splitBy(p("scpo.outbound.loc.receivers"), ",") map {
 			(receiver: $) if (!isEmpty($))
 		}).receiver,
-		messageVersion: p('scpo.outbound.loc.identifier'),
+		messageVersion: "BYDM 2021.10.0",
 		messageId: uuid(),
 		"type": p("scpo.outbound.loc.messagetype"),
 		creationDateAndTime: now()

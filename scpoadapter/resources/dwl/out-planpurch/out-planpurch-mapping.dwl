@@ -10,7 +10,7 @@ var udcs = vars.outboundUDCs.planpurch[0].planpurch[0]
 		receiver: (splitBy(p("scpo.outbound.planpurch.receivers"), ",") map {
 			(receiver: $) if (!isEmpty($))
 		}).receiver,
-		messageVersion: p('scpo.outbound.planpurch.identifier'),
+		messageVersion: "BYDM 2021.8.0",
 		messageId: uuid(),
 		"type": p("scpo.outbound.planpurch.messagetype"),
 		creationDateAndTime: now()

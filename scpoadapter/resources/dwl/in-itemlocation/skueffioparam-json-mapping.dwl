@@ -23,22 +23,22 @@ arr:(itemLocation.inventoryOptimizationParameters.inventoryOptimizationEffective
 		STOCKOUTPENALTY: eff.stockOutPenaltyAmount.value,
 		REVIEWPERIOD: if(eff.reviewPeriodDuration.value != null) 
 						if(eff.reviewPeriodDuration.timeMeasurementUnitCode != null) 		   		   			
-							if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "sec") 
+							if(lower(p("bydm.inbound.skueffioparam.timemeasurementunitcode")) startsWith "sec") 
 									
 										ceil(eff.reviewPeriodDuration.value * conversionToSeconds[eff.reviewPeriodDuration.timeMeasurementUnitCode][0]  as Number)
-							else if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "hour") 
+							else if(lower(p("bydm.inbound.skueffioparam.timemeasurementunitcode")) startsWith "hour") 
 									
 										ceil(eff.reviewPeriodDuration.value * conversionToHours[eff.reviewPeriodDuration.timeMeasurementUnitCode][0]  as Number)
-							else if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "day") 
+							else if(lower(p("bydm.inbound.skueffioparam.timemeasurementunitcode")) startsWith "day") 
 									
 										ceil(eff.reviewPeriodDuration.value * conversionToDays[eff.reviewPeriodDuration.timeMeasurementUnitCode][0]  as Number) 
-							else if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "week") 
+							else if(lower(p("bydm.inbound.skueffioparam.timemeasurementunitcode")) startsWith "week") 
 									
 										ceil(eff.reviewPeriodDuration.value * conversionToWeeks[eff.reviewPeriodDuration.timeMeasurementUnitCode][0]  as Number) 			
-							else if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "month") 
+							else if(lower(p("bydm.inbound.skueffioparam.timemeasurementunitcode")) startsWith "month") 
 									
 										ceil(eff.reviewPeriodDuration.value * conversionToMonths[eff.reviewPeriodDuration.timeMeasurementUnitCode][0]  as Number)
-							else if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "year") 
+							else if(lower(p("bydm.inbound.skueffioparam.timemeasurementunitcode")) startsWith "year") 
 									
 										ceil(eff.reviewPeriodDuration.value * conversionToYears[eff.reviewPeriodDuration.timeMeasurementUnitCode][0]  as Number)
 							else 

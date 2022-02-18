@@ -10,7 +10,7 @@ var DEFAULT_VALUE='DEFAULT'
 		receiver: (splitBy(p("scpo.outbound.skueffinventoryparam.receivers"), ",") map {
 			(receiver: $) if (!isEmpty($))
 		}).receiver,
-		messageVersion: p('scpo.outbound.skueffinventoryparam.identifier'),
+		messageVersion: "BYDM 2021.7.0",
 		messageId: uuid(),
 		"type": p("scpo.outbound.skueffinventoryparam.messagetype"),
 		creationDateAndTime: now()

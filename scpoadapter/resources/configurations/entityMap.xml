@@ -346,11 +346,6 @@
     	</table> -->
     </entity-map>
     <entity-map scpoEntityName="item" bi-directional="true">
-	    <table name="UDT_ITEM01" isUDT="true">
-    		<column hostColumnName="UDT_STR1" scpoColumnName="ITEM"  isPK="true"/>
-    		<column hostColumnName="UDT_STR2" scpoColumnName="UDT_ATTRIBUTE_STR1" />
-    		
-    	</table>   
     	<!-- <table name="item" isOutBound="true">
     		<column hostColumnName="description" scpoColumnName="udc1"/>
     		<column hostColumnName="tradeDate" scpoColumnName="udc2" dataType="date"/>

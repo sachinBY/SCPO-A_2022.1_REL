@@ -69,18 +69,18 @@ flatten(flatten(payload.network map (network, networkIndex) -> {
 				else default_value,
 		LOADDUR: if(network.freightCharacteristics.loadingDuration.value != null) 
 					if(network.freightCharacteristics.loadingDuration.timeMeasurementUnitCode != null) 		   		   			
-				if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "sec") 
+				if(lower(p("bydm.inbound.sourcing.timemeasurementunitcode")) startsWith "sec") 
 						ceil(network.freightCharacteristics.loadingDuration.value * conversionToSeconds[network.freightCharacteristics.loadingDuration.timeMeasurementUnitCode][0]  as Number)
-				else if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "hour") 
+				else if(lower(p("bydm.inbound.sourcing.timemeasurementunitcode")) startsWith "hour") 
 						ceil(network.freightCharacteristics.loadingDuration.value * conversionToHours[network.freightCharacteristics.loadingDuration.timeMeasurementUnitCode][0]  as Number)
-				else if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "day") 
+				else if(lower(p("bydm.inbound.sourcing.timemeasurementunitcode")) startsWith "day") 
 						ceil(network.freightCharacteristics.loadingDuration.value * conversionToDays[network.freightCharacteristics.loadingDuration.timeMeasurementUnitCode][0]  as Number) 
-				else if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "week") 
+				else if(lower(p("bydm.inbound.sourcing.timemeasurementunitcode")) startsWith "week") 
 						ceil(network.freightCharacteristics.loadingDuration.value * conversionToWeeks[network.freightCharacteristics.loadingDuration.timeMeasurementUnitCode][0]  as Number) 		
-				else if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "month") 
+				else if(lower(p("bydm.inbound.sourcing.timemeasurementunitcode")) startsWith "month") 
 					
 						ceil(network.freightCharacteristics.loadingDuration.value * conversionToMonths[network.freightCharacteristics.loadingDuration.timeMeasurementUnitCode][0]  as Number)
-				else if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "year") 
+				else if(lower(p("bydm.inbound.sourcing.timemeasurementunitcode")) startsWith "year") 
 						ceil(network.freightCharacteristics.loadingDuration.value * conversionToYears[network.freightCharacteristics.loadingDuration.timeMeasurementUnitCode][0]  as Number)
 				else 
 						ceil(network.freightCharacteristics.loadingDuration.value * conversionToMinutes[network.freightCharacteristics.loadingDuration.timeMeasurementUnitCode][0]  as Number)
@@ -91,21 +91,21 @@ flatten(flatten(payload.network map (network, networkIndex) -> {
 				default_value,
 		UNLOADDUR: if(network.freightCharacteristics.unloadingDuration.value != null) 
 					if(network.freightCharacteristics.unloadingDuration.timeMeasurementUnitCode != null) 		   		   			
-				if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "sec") 
+				if(lower(p("bydm.inbound.sourcing.timemeasurementunitcode")) startsWith "sec") 
 					
 						ceil(network.freightCharacteristics.unloadingDuration.value * conversionToSeconds[network.freightCharacteristics.unloadingDuration.timeMeasurementUnitCode][0]  as Number)
-				else if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "hour") 
+				else if(lower(p("bydm.inbound.sourcing.timemeasurementunitcode")) startsWith "hour") 
 					
 						ceil(network.freightCharacteristics.unloadingDuration.value * conversionToHours[network.freightCharacteristics.unloadingDuration.timeMeasurementUnitCode][0]  as Number)
-				else if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "day") 
+				else if(lower(p("bydm.inbound.sourcing.timemeasurementunitcode")) startsWith "day") 
 					
 						ceil(network.freightCharacteristics.unloadingDuration.value * conversionToDays[network.freightCharacteristics.unloadingDuration.timeMeasurementUnitCode][0]  as Number )
-				else if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "week") 
+				else if(lower(p("bydm.inbound.sourcing.timemeasurementunitcode")) startsWith "week") 
 						ceil(network.freightCharacteristics.unloadingDuration.value * conversionToWeeks[network.freightCharacteristics.unloadingDuration.timeMeasurementUnitCode][0]  as Number)		
-				else if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "month") 
+				else if(lower(p("bydm.inbound.sourcing.timemeasurementunitcode")) startsWith "month") 
 					
 						ceil(network.freightCharacteristics.unloadingDuration.value * conversionToMonths[network.freightCharacteristics.unloadingDuration.timeMeasurementUnitCode][0]  as Number)
-				else if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "year") 
+				else if(lower(p("bydm.inbound.sourcing.timemeasurementunitcode")) startsWith "year") 
 					
 						ceil(network.freightCharacteristics.unloadingDuration.value * conversionToYears[network.freightCharacteristics.unloadingDuration.timeMeasurementUnitCode][0]  as Number)
 				else 

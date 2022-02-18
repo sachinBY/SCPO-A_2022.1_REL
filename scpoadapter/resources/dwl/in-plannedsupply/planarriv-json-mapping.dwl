@@ -15,7 +15,7 @@ flatten(flatten(payload.plannedSupply filter ($."type" == "PLAN_ARRIVAL") map (p
 				
 		(DEST: plannedSupply.plannedSupplyId.shipTo.primaryId)
 				if plannedSupply.plannedSupplyId.shipTo.primaryId != null,
-		(SEQNUM:indexOfplannedSupplyDetail as Number),		
+		(SEQNUM:indexOfplannedSupply as Number),		
 		(NEEDARRIVDATE:plannedSupplyDetail.availableForSaleDate) if (plannedSupplyDetail.availableForSaleDate != null),	
 		(SCHEDARRIVDATE:plannedSupplyDetail.availableForSaleDate) if (plannedSupplyDetail.availableForSaleDate != null),
 		(NEEDSHIPDATE:plannedSupplyDetail.orderCutoffDateTime) if (plannedSupplyDetail.orderCutoffDateTime != null),	

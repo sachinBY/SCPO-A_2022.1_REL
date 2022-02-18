@@ -9,7 +9,7 @@ var udcs = vars.outboundUDCs.vehicleloadline[0].vehicleloadline[0]
 	receiver: (splitBy(p("scpo.outbound.vehicleloadline.receivers") , ",") map {
 			(receiver: $) if ($ != null and $ != '')
 		}).receiver,		
-    messageVersion:p('scpo.outbound.vehicleloadline.identifier'),
+    messageVersion:"BYDM 2021.8.0",
     messageId:uuid(),
     "type":p('scpo.outbound.vehicleloadline.messagetype'),
     creationDateAndTime:now()

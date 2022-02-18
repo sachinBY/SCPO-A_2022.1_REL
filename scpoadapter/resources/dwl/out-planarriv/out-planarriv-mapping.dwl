@@ -9,7 +9,7 @@ var udcs = vars.outboundUDCs.planarriv[0].planarriv[0]
 		receiver: (splitBy(p("scpo.outbound.planarriv.receivers"), ",") map {
 			(receiver: $) if (!isEmpty($))
 		}).receiver,
-		messageVersion: p('scpo.outbound.planarriv.identifier'),
+		messageVersion: "BYDM 2021.8.0",
 		messageId: uuid(),
 		"type": p("scpo.outbound.planarriv.messagetype"),
 		creationDateAndTime: now()

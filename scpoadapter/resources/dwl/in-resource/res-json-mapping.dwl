@@ -57,22 +57,22 @@ flatten (flatten (payload.resource map(res , index) ->{
 			
 			SHIFTSIZE: if(res.shiftDuration.value != null) 
 						if(res.shiftDuration.timeMeasurementUnitCode != null) 		   		   			
-							if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "sec") 
+							if(lower(p("bydm.inbound.resource.timemeasurementunitcode")) startsWith "sec") 
 									
 										ceil(res.shiftDuration.value * conversionToSeconds[res.shiftDuration.timeMeasurementUnitCode][0]  as Number)
-							else if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "hour") 
+							else if(lower(p("bydm.inbound.resource.timemeasurementunitcode")) startsWith "hour") 
 									
 										ceil(res.shiftDuration.value * conversionToHours[res.shiftDuration.timeMeasurementUnitCode][0]  as Number)
-							else if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "day") 
+							else if(lower(p("bydm.inbound.resource.timemeasurementunitcode")) startsWith "day") 
 									
 										ceil(res.shiftDuration.value * conversionToDays[res.shiftDuration.timeMeasurementUnitCode][0]  as Number) 
-							else if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "week") 
+							else if(lower(p("bydm.inbound.resource.timemeasurementunitcode")) startsWith "week") 
 									
 										ceil(res.shiftDuration.value * conversionToWeeks[res.shiftDuration.timeMeasurementUnitCode][0]  as Number) 			
-							else if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "month") 
+							else if(lower(p("bydm.inbound.resource.timemeasurementunitcode")) startsWith "month") 
 									
 										ceil(res.shiftDuration.value * conversionToMonths[res.shiftDuration.timeMeasurementUnitCode][0]  as Number)
-							else if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "year") 
+							else if(lower(p("bydm.inbound.resource.timemeasurementunitcode")) startsWith "year") 
 									
 										ceil(res.shiftDuration.value * conversionToYears[res.shiftDuration.timeMeasurementUnitCode][0]  as Number)
 							else 

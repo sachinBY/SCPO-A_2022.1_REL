@@ -12,7 +12,7 @@ var nettedForecastTypeCode=vars.codeMap.nettedForecastTypeCode
 		receiver: (splitBy(p("scpo.outbound.fcstorder.receivers"), ",") map {
 			(receiver: $) if (!isEmpty($))
 		}).receiver,
-		messageVersion: p('scpo.outbound.fcstorder.identifier'),
+		messageVersion: "BYDM 2021.8.0",
 		messageId: uuid(),
 		"type": p("scpo.outbound.fcstorder.messagetype"),
 		creationDateAndTime: now()

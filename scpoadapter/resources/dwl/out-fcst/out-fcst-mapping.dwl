@@ -11,7 +11,7 @@ var forecastTypeCodeForFcst=vars.codeMap.forecastTypeCodeForFcst
 		receiver: (splitBy(p("scpo.outbound.fcst.receivers"), ",") map {
 			(receiver: $) if (!isEmpty($))
 		}).receiver,
-		messageVersion: p('scpo.outbound.fcst.identifier'),
+		messageVersion: "BYDM 2021.5.0",
 		messageId: uuid(),
 		"type": p("scpo.outbound.fcst.messagetype"),
 		creationDateAndTime: now()

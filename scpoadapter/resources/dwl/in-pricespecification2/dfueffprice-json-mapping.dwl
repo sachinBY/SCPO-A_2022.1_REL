@@ -23,5 +23,5 @@ var dfueffpriceEntity = vars.entityMap.dfuprice[0].dfueffprice[0]
 		else default_value,
 	(if ($.avpList != null  and ($.documentActionCode == "ADD" or $.documentActionCode == "CHANGE_BY_REFRESH") and dfueffpriceEntity != null) 
 		lib.transformAvpListToUdcs(dfueffpriceEntity, $.avpList, lib.getAvpListMap($.avpList)) else null),
-	ACTIONCODE: $.documentActionCode default "ADD"
+	ACTIONCODE: $.documentActionCode default "CHANGE_BY_REFRESH"
 })

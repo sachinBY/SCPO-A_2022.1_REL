@@ -25,23 +25,23 @@ var default_value = "###JDA_DEFAULT_VALUE###"
            else fail("Item can't be null"), 
 	LEADTIME: 	if($.replenishLeadDuration.value != null) 
 					if($.replenishLeadDuration.timeMeasurementUnitCode != null) 		   		   			
-				if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "sec") 
+				if(lower(p("bydm.inbound.purchmethod.timemeasurementunitcode")) startsWith "sec") 
 					
 						ceil($.replenishLeadDuration.value * conversionToSeconds[$.replenishLeadDuration.timeMeasurementUnitCode][0] as Number)
-				else if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "hour") 
+				else if(lower(p("bydm.inbound.purchmethod.timemeasurementunitcode")) startsWith "hour") 
 					
 						ceil($.replenishLeadDuration.value * conversionToHours[$.replenishLeadDuration.timeMeasurementUnitCode][0]  as Number)
-				else if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "day") 
+				else if(lower(p("bydm.inbound.purchmethod.timemeasurementunitcode")) startsWith "day") 
 					
 						ceil($.replenishLeadDuration.value * conversionToDays[$.replenishLeadDuration.timeMeasurementUnitCode][0]  as Number) 
-				else if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "week") 
+				else if(lower(p("bydm.inbound.purchmethod.timemeasurementunitcode")) startsWith "week") 
 					
 						ceil($.replenishLeadDuration.value * conversionToWeeks[$.replenishLeadDuration.timeMeasurementUnitCode][0]  as Number) 
 					
-				else if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "month") 
+				else if(lower(p("bydm.inbound.purchmethod.timemeasurementunitcode")) startsWith "month") 
 					
 						ceil($.replenishLeadDuration.value * conversionToMonths[$.replenishLeadDuration.timeMeasurementUnitCode][0]  as Number)
-				else if(lower(p("bydm.inbound.default.timemeasurementunitcode")) startsWith "year") 
+				else if(lower(p("bydm.inbound.purchmethod.timemeasurementunitcode")) startsWith "year") 
 					
 						ceil($.replenishLeadDuration.value * conversionToYears[$.replenishLeadDuration.timeMeasurementUnitCode][0]  as Number)
 				else 
