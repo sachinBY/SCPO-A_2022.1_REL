@@ -7,7 +7,7 @@ scpo:
           rolling-offset: 15 # number of mins or hours at which new folder will be created  
         create_csv_per_message: false  
         bulk_csv_source_dir:
-          path: "//MD1NPDVJCE01.dev.corp.local/Tools/u/SCPO-A/csvdata"
+          path: "c:\\csvdata"
         processed_csv_dir:
           path: "c:\\archive"  
     bydm_billofmaterial:

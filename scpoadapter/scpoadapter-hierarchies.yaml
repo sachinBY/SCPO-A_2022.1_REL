@@ -1,7 +1,12 @@
 scpo:
   tables:
     hierarchies:
-      total: 3
+      total: 8
       '0': 'uom'
       '1': 'uomcategory'
       '2': 'ddeprofile'
+      '3': 'item'
+      '4': 'dmdunit'
+      '5': 'uomcategoryconvfactor'
+      '6': 'loc'
+      '7': 'sku'

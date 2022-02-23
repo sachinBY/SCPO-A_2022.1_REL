@@ -17,7 +17,7 @@ scpo:
         storeclientid: "client_id"
         storeclientsecret: "client_secret"
         max:
-          connections: "50"
+          connections: "2"
         connection:
           idle:
             timeout: "1200000"
