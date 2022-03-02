@@ -14,16 +14,17 @@ var udcs = vars.outboundUDCs.orderskudetail[0].orderskudetail[0]
 		"type": p("scpo.outbound.orderskudetail.messagetype"),
 		creationDateAndTime: now()
 	},
-	recommendedPurchaseOrder: (payload groupBy $.ORDERID pluck {
-		documentStatusCode: "ORIGINAL",
-		documentActionCode: "ADD",
+	recommendedPurchaseOrder: flatten(flatten(payload map ((item, index) -> {
+    value:(flatten(item pluck($))) map  {
+       documentStatusCode: "ORIGINAL",
+	   documentActionCode: "ADD",
 		(avpList: (filter(udcs, (element, index) -> $[upper(element.scpoColumnName)] != null) map (udc , value) -> {
 			name: udc.hostColumnName,
 			value: $[upper(udc.scpoColumnName)]
 		})) if (!isEmpty(udcs)),
 		recommendedPurchaseOrderId: $$ as String default "",
 		"type": "RECOMMENDED_ORDER",
-		lineItem: $ map {
+		lineItem: [ {
 			itemId: $.ITEM,
 			shipTo: $.DEST,
 			requestedShipDate: dateUtil.formatSCPOToGS1($.DEPARTUREDATE),
@@ -50,6 +51,10 @@ var udcs = vars.outboundUDCs.orderskudetail[0].orderskudetail[0]
 					timeMeasurementUnitCode: "DAY"
 				}
 			}
-		}
-	})
-}
+		}]
+	   
+	   
+	   
+    }
+})).value)}
+

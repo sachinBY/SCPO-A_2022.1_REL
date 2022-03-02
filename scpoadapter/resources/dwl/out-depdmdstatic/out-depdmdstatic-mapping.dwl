@@ -1,5 +1,5 @@
 %dw 2.0
-output application/json encoding = "UTF-8"
+output application/json encoding = "UTF-8",deferred=true
 var udcs = vars.outboundUDCs.depdmdstatic[0].depdmdstatic[0]
 import * from dw::core::Strings
 ---

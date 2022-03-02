@@ -1,5 +1,5 @@
 %dw 2.0
-output application/json encoding = "UTF-8"
+output application/json encoding = "UTF-8",deferred=true
 var funCaller = readUrl("classpath://config-repo/scpoadapter/resources/dwl/date-util.dwl")
 var udcs = vars.outboundUDCs.projordertotal[0].projordertotal[0]
 ---

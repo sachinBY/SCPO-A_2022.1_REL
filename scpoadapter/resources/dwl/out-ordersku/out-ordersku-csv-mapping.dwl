@@ -1,7 +1,7 @@
 %dw 2.0
 var udcs = vars.outboundUDCs.ordersku[0].ordersku[0]
 var lib = readUrl("classpath://config-repo/scpoadapter/resources/dwl/host-scpo-udc-mapping.dwl")
-output application/csv
+output application/csv deferred=true
 ---
 payload map {
 	

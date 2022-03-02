@@ -1,10 +1,10 @@
 %dw 2.0
 output application/csv
-var DEFAULT_VALUE='DEFAULT'
 var udcs = vars.outboundUDCs.skueffinventoryparam[0].skueffinventoryparam[0]
 var lib = readUrl("classpath://config-repo/scpoadapter/resources/dwl/host-scpo-udc-mapping.dwl")
 ---
-payload map ((item, index) ->{
+flatten(flatten(payload map ((item1, index1) -> {
+    value:(flatten(item1 pluck($))) map (item, index) -> {
 	"itemLocationEffectiveInventoryParameters.itemLocationEffectiveInventoryParametersId.item.primaryId": item.ITEM,
 	"itemLocationEffectiveInventoryParameters.itemLocationEffectiveInventoryParametersId.location.primaryId": item.LOC,
 	"itemLocationEffectiveInventoryParameters.effectiveInventoryParameters.effectiveFromDateTime": item.EFF as DateTime,
@@ -19,4 +19,4 @@ payload map ((item, index) ->{
 	(udcs map (udc , index) -> {
 		((udc.hostColumnName): lib.eval(item[udc.scpoColumnName] , upper(udc.dataType)))
 	}),
-})
+}})).value)

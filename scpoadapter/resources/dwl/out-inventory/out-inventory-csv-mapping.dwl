@@ -1,5 +1,5 @@
-%dw 2.0
-output application/csv
+%dw 2.0 
+output application/csv deferred=true
 var udcs = vars.outboundUDCs.inventory[0].inventory[0]
 var lib = readUrl("classpath://config-repo/scpoadapter/resources/dwl/host-scpo-udc-mapping.dwl")
 ---

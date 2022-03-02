@@ -1,5 +1,5 @@
 %dw 2.0
-output application/csv
+output application/csv deferred=true
 var DEFAULT_VALUE='DEFAULT'
 var forecastTypeCodeForFcst=vars.codeMap.forecastTypeCodeForFcst
 var udcs = vars.outboundUDCs.fcst[0].fcst[0]

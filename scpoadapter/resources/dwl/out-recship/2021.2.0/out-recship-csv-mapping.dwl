@@ -1,5 +1,5 @@
 %dw 2.0
-output application/csv
+output application/csv deferred=true
 var udcs = vars.outboundUDCs.recship[0].recship[0]
 var funCaller = readUrl("classpath://config-repo/scpoadapter/resources/dwl/date-util.dwl")
 var lib = readUrl("classpath://config-repo/scpoadapter/resources/dwl/host-scpo-udc-mapping.dwl")

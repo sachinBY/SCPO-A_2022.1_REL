@@ -5,6 +5,6 @@ using (
     sql = "SELECT * FROM DEPDMDSTATIC"
 )
 if (vars.filterCondition != null)
-   sql ++ " WHERE " ++ vars.filterCondition
+   sql ++ " WHERE " ++ vars.filterCondition ++ " order by ITEM,LOC,PARENT,STARTDATE,FIRMSW,BOMNUM,PARENTSEQNUM,PARENTSCHEDDATE,PARENTEXPDATE,PARENTORDERTYPE,SUPERSEDESW,PARENTSTARTDATE,SEQNUM offset " ++ vars.offset ++ " rows fetch next " ++ vars.next ++ " rows only"
   else 
-  	sql
+  	sql ++ " order by ITEM,LOC,PARENT,STARTDATE,FIRMSW,BOMNUM,PARENTSEQNUM,PARENTSCHEDDATE,PARENTEXPDATE,PARENTORDERTYPE,SUPERSEDESW,PARENTSTARTDATE,SEQNUM offset " ++ vars.offset ++ " rows fetch next " ++ vars.next ++ " rows only"

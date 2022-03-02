@@ -5,6 +5,6 @@ using (
     sql = "SELECT * FROM LOC"
 )
 if (vars.filterCondition != null)
-   sql ++ " WHERE " ++ vars.filterCondition
+   sql ++ " WHERE " ++ vars.filterCondition ++ " ORDER BY LOC offset " ++ vars.offset ++ " rows fetch next " ++ vars.next ++ " rows only"
   else 
-  	sql
+  	sql ++ " ORDER BY LOC offset " ++ vars.offset ++ " rows fetch next " ++ vars.next ++ " rows only"

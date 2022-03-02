@@ -14,6 +14,7 @@ jms:
     mb:
       out: MB-SCPO
       in: SCPO-MB
+      in-intermediate: SCPO-MB-INT
       error: SCPO-DLQMB
     scpo:
       ack: ACK-SCPO  

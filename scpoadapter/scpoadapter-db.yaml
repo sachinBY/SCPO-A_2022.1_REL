@@ -15,7 +15,7 @@ scpo:
       errors:
         msg: "Continuous Errors in the batch"
     oracle:
-      host: md1npdvjce01
+      host: MD1NPDVJCE01
       port: "1521"
       instance: o19c01
       user: SCPOMGR

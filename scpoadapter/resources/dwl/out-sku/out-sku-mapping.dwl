@@ -1,5 +1,5 @@
 %dw 2.0
-output application/json encoding = "UTF-8"
+output application/json encoding = "UTF-8",deferred=true
 var funCaller = readUrl("classpath://config-repo/scpoadapter/resources/dwl/date-util.dwl")
 var udcs = vars.outboundUDCs.sku[0].sku[0]
 ---
@@ -31,249 +31,254 @@ var udcs = vars.outboundUDCs.sku[0].sku[0]
 				primaryId: $.LOC
 			}
 		},
-		businessInstanceId: $.ENABLEOPT,
+		(businessInstanceId: $.ENABLEOPT) if($.ENABLEOPT != null),
 		statusCode: "ACTIVE",
-		onHandInventoryQuantity: {
+		(onHandInventoryQuantity: {
 			value: $.OH
-		},
-		onHandInventoryPostingDate: ($.OHPOST) as DateTime,
-		resource: [$.RES],
+		}) if($.OH != null),
+		(onHandInventoryPostingDate: ($.OHPOST) as DateTime) if($.OHPOST != null),
+		(resource: [$.RES]) if($.RES != null),
 		hasInfiniteSupply: if($.INFINITESUPPLYSW == 0) false else true,
 		isStorable: if($.STORABLESW == 0) false else true,
 		replenishmentMethod: if($.REPLENMETHOD == 1) 'REPLENISHMENT_ONLY' else if($.REPLENMETHOD == 2) 'ALLOCATION_ONLY' else if($.REPLENMETHOD == 3) 'REPLENISHMENT_AND_ALLOCATION' else null,
 		replenishmentType: if($.REPLENTYPE == 1) 'TRANSFERRED' else if($.REPLENTYPE == 2) 'ASSEMBLED' else if($.REPLENTYPE == 4) 'INTERFACE' else if($.REPLENTYPE == 5) 'MPS' else null,
-		demandParameters: {
-			cumulativeDemandQuantity: {
+		(demandParameters: {
+			(cumulativeDemandQuantity: {
 				value: $.DMDTODATE
-			},
-			unitCost: {
+			}) if($.DMDTODATE != null),
+			(unitCost: {
 				currencyCode: "USD",
 				value: $.INDDMDUNITCOST
-			},
-			unitMargin: {
+			}) if($.INDDMDUNITCOST != null),
+			(unitMargin: {
 				currencyCode: "USD",
 				value: $.INDDMDUNITMARGIN
-			},
-			unitInventoryCarryingCost: {
+			}) if($.INDDMDUNITMARGIN != null),
+			(unitInventoryCarryingCost: {
 				currencyCode: "USD",
 				value: $.UNITCARCOST
-			},
-			unitPrice: {
+			}) if($.UNITCARCOST != null),
+			(unitPrice: {
 				currencyCode: "USD",
 				value: $.UNITPRICE
-			},
-			pricingCalendar: $.PRICECAL
-		},
-		deploymentParameters: {
-			initialStockoutCost: {
+			}) if($.UNITPRICE != null),
+			(pricingCalendar: $.PRICECAL) if($.PRICECAL != null)
+		}) if($.DMDTODATE != null or $.INDDMDUNITCOST != null or $.INDDMDUNITMARGIN != null or $.UNITCARCOST != null or $.UNITPRICE != null or $.PRICECAL != null),
+		(deploymentParameters: {
+			(initialStockoutCost: {
 				currencyCode: "USD",
 				value: $.INITSTKOUTCOST
-			},
-			surplusRestockCost: {
+			}) if($.INITSTKOUTCOST != null),
+			(surplusRestockCost: {
 				currencyCode: "USD",
 				value: $.SURPLUSRESTOCKCOST
-			}
-		},
-		effectiveInventoryParameters: [{
-			effectiveFromDateTime: ($.EFFINV_EFF) as DateTime,
-			maximumCoverageDuration: {
+			}) if($.SURPLUSRESTOCKCOST != null)
+		}) if($.INITSTKOUTCOST != null or $.SURPLUSRESTOCKCOST != null),
+		(effectiveInventoryParameters: [{
+			(effectiveFromDateTime: ($.EFFINV_EFF) as DateTime)if($.EFFINV_EFF != null),
+			(maximumCoverageDuration: {
 				timeMeasurementUnitCode: "MIN",
 				value: $.MAXCOVDUR
-			},
-			maximumOnHandQuantity: {
+			}) if($.MAXCOVDUR != null),
+			(maximumOnHandQuantity: {
 				measurementUnitCode: "EA",
 				value: $.MAXOHQTY
-			},
-			minimumSafetyStockQuantity: {
+			}) if($.MAXOHQTY != null),
+			(minimumSafetyStockQuantity: {
 				measurementUnitCode: "EA",
 				value: $.MINSSQTY
-			},
-			safetyStockCoverageDuration: {
+			}) if($.MINSSQTY != null),
+			(safetyStockCoverageDuration: {
 				timeMeasurementUnitCode: "MIN",
 				value: $.SSCOVDUR
-			},
-			demandChannel: $.DMDGROUP
-		}],
-		inventoryOptimizationParameters: {
-			averageRequisitionQuantity: {
+			}) if($.SSCOVDUR != null),
+			(demandChannel: $.DMDGROUP) if($.DMDGROUP != null)
+		}]) if($.EFFINV_EFF != null or $.MAXCOVDUR != null or $.MAXOHQTY != null or $.MINSSQTY != null or $.SSCOVDUR != null or $.DMDGROUP != null),
+		(inventoryOptimizationParameters: {
+			(averageRequisitionQuantity: {
 				measurementUnitCode: "EA",
 				value: $.AVGRQSNSIZE
-			},
-			groupName: $.GROUPNAME,
-			annualRequisitionNumber: $.NUMRQSN,
-			reviewGroup: $.REVIEWGROUP,
-			sensitivityProfile: $.SENSITIVITYPROFILE,
-			inventoryOptimizationEffectiveParameters: [{
-				backOrderPenaltyAmount: {
+			}) if($.AVGRQSNSIZE != null),
+			(groupName: $.GROUPNAME) if($.GROUPNAME != null),
+			(annualRequisitionNumber: $.NUMRQSN) if($.NUMRQSN != null),
+			(reviewGroup: $.REVIEWGROUP) if($.REVIEWGROUP != null),
+			(sensitivityProfile: $.SENSITIVITYPROFILE) if($.SENSITIVITYPROFILE != null),
+			(inventoryOptimizationEffectiveParameters: [{
+				(backOrderPenaltyAmount: {
 					currencyCode: "USD",
 					value: $.BACKORDERPENALTY
-				},
-				coefficientVariation: $.COEFFVAR,
-				effectiveFromDate: ($.EFFIO_EFF) as Date{format:"yyyy-MM-dd",class:"java.sql.Date"},
-				endOfLifeDemand: $.ENDOFLIFEDMD,
-				eventType: $.EVENTTYPE as String,
-				handlingCost: {
+				}) if($.BACKORDERPENALTY != null),
+				(coefficientVariation: $.COEFFVAR) if($.COEFFVAR != null),
+				(effectiveFromDate: ($.EFFIO_EFF) as Date{format:"yyyy-MM-dd",class:"java.sql.Date"}) if($.EFFIO_EFF != null),
+				(endOfLifeDemand: $.ENDOFLIFEDMD) if($.ENDOFLIFEDMD != null),
+				(eventType: $.EVENTTYPE as String) if($.EVENTTYPE != null),
+				(handlingCost: {
 					currencyCode: "USD",
 					value: $.HANDLINGCOST
-				},
-				holdingCost: {
+				}) if($.HANDLINGCOST != null),
+				(holdingCost: {
 					currencyCode: "USD",
 					value: $.EFFIO_HOLDINGCOST
-				},
-				inventoryOptimizationServiceProfile: $.IOSERVICEPROFILE,
-				maximumReOrderQuantity: {
+				}) if($.EFFIO_HOLDINGCOST != null),
+				(inventoryOptimizationServiceProfile: $.IOSERVICEPROFILE) if($.IOSERVICEPROFILE != null),
+				(maximumReOrderQuantity: {
 					measurementUnitCode: "EA",
 					value: $.MAXREORDERQTY
-				},
-				minimumReOrderQuantity: {
+				}) if($.MAXREORDERQTY != null),
+				(minimumReOrderQuantity: {
 					measurementUnitCode: "EA",
 					value: $.MINREORDERQTY
-				},
-				orderCost: {
+				}) if($.MINREORDERQTY != null),
+				(orderCost: {
 					currencyCode: "USD",
 					value: $.ORDERCOST
-				},
-				overStockPenaltyAmount: {
+				}) if($.ORDERCOST != null),
+				(overStockPenaltyAmount: {
 					currencyCode: "USD",
 					value: $.OVERSTOCKPENALTY
-				},
-				replenishmentPolicy: $.REPLENPOLICY,
-				reviewPeriodDuration: {
+				}) if($.OVERSTOCKPENALTY != null),
+				(replenishmentPolicy: $.REPLENPOLICY) if($.REPLENPOLICY != null),
+				(reviewPeriodDuration: {
 					timeMeasurementUnitCode: "MIN",
 					value: $.REVIEWPERIOD
-				},
-				stockOutPenaltyAmount: {
+				}) if($.REVIEWPERIOD != null),
+				(stockOutPenaltyAmount: {
 					currencyCode: "USD",
 					value: $.STOCKOUTPENALTY
-				},
-				unitCost: {
+				}) if($.STOCKOUTPENALTY != null),
+				(unitCost: {
 					currencyCode: "USD",
 					value: $.UNITCOST
-				}
-			}]
-		},
-		perishableParameters: {
-			shelfLifeDuration: {
+				}) if($.UNITCOST != null)
+			}]) if($.BACKORDERPENALTY != null
+		or $.COEFFVAR != null or $.EFFIO_EFF != null or $.ENDOFLIFEDMD != null or $.EVENTTYPE != null or $.HorLINGCOST != null or $.EFFIO_HOLDINGCOST != null or 
+		$.IOSERVICEPROFILE != null or $.MAXREORDERQTY != null or $.MINREORDERQTY != null or $.ORDERCOST != null or $.OVERSTOCKPENALTY != null or 
+		$.REPLENPOLICY != null or $.REVIEWPERIOD != null or $.STOCKOUTPENALTY != null or $.UNITCOST != null)
+		}) if($.AVGRQSNSIZE != null or $.GROUPNAME != null or $.NUMRQSN != null or $.REVIEWGROUP != null or $.SENSITIVITYPROFILE != null),
+		(perishableParameters: {
+			(shelfLifeDuration: {
 				timeMeasurementUnitCode: "MIN",
 				value: $.SHELFLIFEDUR
-			},
-			minimumShelfLifeDuration: {
+			})if($.SHELFLIFEDUR != null),
+			(minimumShelfLifeDuration: {
 				timeMeasurementUnitCode: "MIN",
 				value: $.MINSHELFLIFEDUR
-			},
-			minimumShipmentShelfLifeDuration: {
+			}) if($.MINSHELFLIFEDUR != null),
+			(minimumShipmentShelfLifeDuration: {
 				timeMeasurementUnitCode: "MIN",
 				value: $.MINSHIPSHELFLIFEDUR
-			},
-			maximumShelfLifeDuration: {
+			}) if($.MINSHIPSHELFLIFEDUR != null),
+			(maximumShelfLifeDuration: {
 				timeMeasurementUnitCode: "MIN",
 				value: $.MAXSHELFLIFEDUR
-			},
-		},
-		planningParameters: {
-			supplyLeadBufferDuration: {
+			}) if($.MAXSHELFLIFEDUR != null),
+		}) if($.SHELFLIFEDUR != null or $.MINSHELFLIFEDUR != null or $.MINSHIPSHELFLIFEDUR != null or $.MAXSHELFLIFEDUR != null),
+		(planningParameters: {
+			(supplyLeadBufferDuration: {
 				timeMeasurementUnitCode: "MIN",
 				value: $.BUFFERLEADTIME
-			},
-			receiptCoverageDuration: {
+			}) if($.BUFFERLEADTIME != null),
+			(receiptCoverageDuration: {
 				timeMeasurementUnitCode: "MIN",
 				value: $.DRPCOVDUR
-			},
-			supplyCoverageDuration: {
+			}) if($.DRPCOVDUR != null),
+			(supplyCoverageDuration: {
 				timeMeasurementUnitCode: "MIN",
 				value: $.MPSCOVDUR
-			},
-			receiptFrozenDuration: {
+			}) if($.MPSCOVDUR != null),
+			(receiptFrozenDuration: {
 				timeMeasurementUnitCode: "MIN",
 				value: $.DRPFRZDUR
-			},
-			holdingCost: {
+			}) if($.DRPFRZDUR != null),
+			(holdingCost: {
 				currencyCode: "USD",
 				value: $.PLANPARAM_HOLDINGCOST
-			},
-			incrementalDRPQuantity: {
+			}) if($.PLANPARAM_HOLDINGCOST != null),
+			(incrementalDRPQuantity: {
 				value: $.INCDRPQTY
-			},
-			incrementalMPSQuantity: {
+			}) if($.INCDRPQTY != null),
+			(incrementalMPSQuantity: {
 				value: $.INCMPSQTY
-			},
-			receivingHandlingCost: {
+			}) if($.INCMPSQTY != null),
+			(receivingHandlingCost: {
 				currencyCode: "USD",
 				value: $.INHANDLINGCOST
-			},
-			maximumOnHandQuantity: {
+			}) if($.INHANDLINGCOST != null),
+			(maximumOnHandQuantity: {
 				measurementUnitCode: "EA",
 				value: $.PLANPARAM_MAXOH
-			},
-			manufactureDuration: {
+			}) if($.PLANPARAM_MAXOH != null),
+			(manufactureDuration: {
 				timeMeasurementUnitCode: "MIN",
 				value: $.MFGFRZDUR
-			},
-			manufactureLeadTimeDuration: {
+			}) if($.MFGFRZDUR != null),
+			(manufactureLeadTimeDuration: {
 				timeMeasurementUnitCode: "MIN",
 				value: $.MFGLEADTIME
-			},
-			minimumDRPQuantity: {
+			}) if($.MFGLEADTIME != null),
+			(minimumDRPQuantity: {
 				value: $.MINDRPQTY
-			},
-			minimumMPSQuantity: {
+			}) if($.MINDRPQTY != null),
+			(minimumMPSQuantity: {
 				value: $.MINMPSQTY
-			},
-			orderingCost: {
+			}) if($.MINMPSQTY != null),
+			(orderingCost: {
 				currencyCode: "USD",
 				value: $.ORDERINGCOST
-			},
-			shippingHandlingCost: {
+			}) if($.ORDERINGCOST != null),
+			(shippingHandlingCost: {
 				currencyCode: "USD",
 				value: $.OUTHANDLINGCOST
-			},
-			shrinkageFactor: $.SHRINKAGEFACTOR,
+			}) if($.OUTHANDLINGCOST != null),
+			(shrinkageFactor: $.SHRINKAGEFACTOR) if($.SHRINKAGEFACTOR != null),
 			useWorkInProgressQuantity: if($.USEWIPSW == 0) false else true,
-		},
-		safetyStockParameters: {
-			safetyStockRuleCode: $.SSRULE as String,
-			accumulationDuration: {
+		}) if($.BUFFERLEADTIME != null or $.DRPCOVDUR != null or $.MPSCOVDUR != null or $.DRPFRZDUR != null or $.PLANPARAM_HOLDINGCOST != null or 
+		$.INCDRPQTY != null or $.INCMPSQTY != null or $.INHorLINGCOST != null or $.PLANPARAM_MAXOH != null or 	$.MFGFRZDUR != null or $.MFGLEADTIME != null or
+		$.MINDRPQTY != null or $.MINMPSQTY != null or $.ORDERINGCOST != null or $.OUTHorLINGCOST != null or $.SHRINKAGEFACTOR != null),
+		(safetyStockParameters: {
+			(safetyStockRuleCode: $.SSRULE as String) if($.SSRULE != null),
+			(accumulationDuration: {
 				timeMeasurementUnitCode: "MIN",
 				value: $.ACCUMDUR
-			},
-			averageReplenishmentLeadDuration: {
+			}) if($.ACCUMDUR != null),
+			(averageReplenishmentLeadDuration: {
 				timeMeasurementUnitCode: "MIN",
 				value: $.AVGLEADTIME
-			},
-			maximumSafetyStock: {
+			}) if($.AVGLEADTIME != null),
+			(maximumSafetyStock: {
 				measurementUnitCode: "EA",
 				value: $.SSPARAM_MAXSS
-			},
-			minimumSafetyStock: {
+			}) if($.SSPARAM_MAXSS != null),
+			(minimumSafetyStock: {
 				measurementUnitCode: "EA",
 				value: $.MINSS
-			},
-			safetyStockCoverageDuration: {
+			}) if($.MINSS != null),
+			(safetyStockCoverageDuration: {
 				timeMeasurementUnitCode: "MIN",
 				value: $.SSCOV
-			},
-			safetyStockCustomerServiceLevel: $.STATSSCSL
-		},
-		safetyStockPresentation: [{
+			}) if($.SSCOV != null),
+			(safetyStockCustomerServiceLevel: $.STATSSCSL) if($.STATSSCSL != null)
+		}) if($.SSRULE != null or $.ACCUMDUR != null or $.AVGLEADTIME != null or $.SSPARAM_MAXSS != null or $.MINSS != null or $.SSCOV != null or $.STATSSCSL != null),
+		(safetyStockPresentation: [{
 			actionCode: "ADD",
-			effectiveFromDateTime: ($.SSPR_EFF) as DateTime,
-			effectiveUpToDateTime: ($.DISC) as DateTime,
-			displayQuantity: {
+			(effectiveFromDateTime: $.SSPR_EFF as DateTime) if($.SSPR_EFF != null),
+			(effectiveUpToDateTime: $.DISC as DateTime) if($.DISC != null),
+			(displayQuantity: {
 				measurementUnitCode: "EA",
 				value: $.DISPLAYQTY
-			},
-			presentationQuantity: {
+			}) if($.DISPLAYQTY != null),
+			(presentationQuantity: {
 				measurementUnitCode: "EA",
 				value: $.PRESENTATIONQTY
-			},
-			maximumOnHandQuantity: {
+			}) if($.PRESENTATIONQTY != null),
+			(maximumOnHandQuantity: {
 				measurementUnitCode: "EA",
 				value: $.SSPR_MAXOH
-			},
-			maximumSafetyStock: {
+			}) if($.SSPR_MAXOH != null),
+			(maximumSafetyStock: {
 				measurementUnitCode: "EA",
 				value: $.SSPR_MAXSS
-			},
-		}]
+			}) if($.SSPR_MAXSS != null),
+		}]) if($.SSPR_EFF != null or $.DISC != null or $.DISPLAYQTY != null or $.PRESENTATIONQTY != null or $.SSPR_MAXOH != null or $.SSPR_MAXSS != null)
 	})
 }

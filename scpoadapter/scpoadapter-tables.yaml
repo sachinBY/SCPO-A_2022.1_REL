@@ -9,7 +9,7 @@ scpo:
         bulk_csv_source_dir:
           path: "//MD1NPDVJCE01.dev.corp.local/Tools/u/SCPO-A/csvdata"
         processed_csv_dir:
-          path: "//MD1NPDVJCE01.dev.corp.local/Tools/u/SCPO-A/archive"   
+          path: "//MD1NPDVJCE01.dev.corp.local/Tools/u/SCPO-A/archive"
     bydm_billofmaterial:
       #version: "2021.2.0"
       tables: "bom,altbom"

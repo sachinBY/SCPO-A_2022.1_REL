@@ -1,5 +1,5 @@
 %dw 2.0
-output application/csv
+output application/csv deferred=true
 var DEFAULT_VALUE='DEFAULT'
 var udcs = vars.outboundUDCs.fcstorder[0].fcstorder[0]
 var lib = readUrl("classpath://config-repo/scpoadapter/resources/dwl/host-scpo-udc-mapping.dwl")

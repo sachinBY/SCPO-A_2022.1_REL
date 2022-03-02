@@ -1,5 +1,5 @@
 %dw 2.0
-output application/json
+output application/json deferred=true
 var funCaller = readUrl("classpath://config-repo/scpoadapter/resources/dwl/date-util.dwl")
 var udcs = vars.outboundUDCs.recship[0].recship[0]
 ---

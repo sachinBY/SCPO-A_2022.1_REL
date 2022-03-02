@@ -8,7 +8,6 @@ scpo:
       format: 'bydm'
     dfutoskufcst:
       receivers: 'HOST.GLOBAL'
-      preprocessing: true
       messagetype: 'forecast2'
       format: 'bydm'
       #version: '2021.2.0'
@@ -55,6 +54,7 @@ scpo:
       #version: '2021.3.0'
     orderskudetail:
       receivers: 'HOST.GLOBAL'
+      preprocessing: true
       messagetype: 'recommendedPurchaseOrder'
       #version: '2021.3.0'
     projorderexception:
@@ -123,6 +123,7 @@ scpo:
     skueffinventoryparam:
       receivers: 'LCT.GLOBAL'
       messagetype: 'itemLocationEffectiveInventoryParameters'
+      preprocessing: true
       format: 'bydm'
       #version: '2021.2.0'
     inventory:
