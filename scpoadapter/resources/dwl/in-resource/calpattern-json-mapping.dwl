@@ -28,9 +28,9 @@ var funCaller = readUrl("classpath://config-repo/scpoadapter/resources/dwl/date-
 				 else if(pattern.patternFrequencyCode=="EVERY_ORDINAL_DAY") 3 
 				 else if(pattern.patternFrequencyCode=="EVERY_WEEKDAY") 4
 				 else if(pattern.patternFrequencyCode=="DAY_OF_WEEK")(
-				 	if(pattern.patternFrequency.weekly.weeksOfRecurrence == 1) 1 else 3)
+				 	if(pattern.patternFrequency.weekly.weeksOfRecurrence == null or pattern.patternFrequency.weekly.weeksOfRecurrence == 1) 1 else 3)
 				 else if(pattern.patternFrequencyCode=="MONTHLY_ON_DAY_OF_MONTH")(
-				 	if(pattern.patternFrequency.weekly.monthsOfRecurrence == 1) 6 else 7)
+				 	if(pattern.patternFrequency.monthly.monthsOfRecurrence == 1) 6 else 7)
 				 else 7) if(pattern.patternFrequencyCode != null),
 			DESCR: if(pattern.name != null) pattern.name else default_value,
 			RANK: if(pattern.rank != null) pattern.rank else default_value,

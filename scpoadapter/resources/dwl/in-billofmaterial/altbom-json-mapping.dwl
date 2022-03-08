@@ -11,9 +11,6 @@ flatten(flatten(payload.billOfMaterial default [] map (billOfMaterial, billOfMat
 			MS_BULK_REF: vars.storeHeaderReference.bulkReference,
 			MS_REF: vars.storeMsgReference.messageReference,
 			INTEGRATION_STAMP:((vars.creationDateAndTime as DateTime) + ("PT$(billOfMaterialIndex)S" as Period)) as String{format:"yyyy-MM-dd HH:mm:ss"},
-			MESSAGE_TYPE: vars.bulkNotificationHeaders.bulkType,
-			INTEGRATION_JOBID: vars.bulkNotificationHeaders.bulkMessageSourceId,
-			SENDER: vars.bulkNotificationHeaders.sender,
 			ALTSUBORD: if ( substituteComponent.substituteItem.primaryId != null ) substituteComponent.substituteItem.primaryId
 							else default_value,
 			ALTSUBORDDISC: if ( substituteComponent.effectiveUpToDate != null) substituteComponent.effectiveUpToDate
