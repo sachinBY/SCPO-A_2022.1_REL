@@ -22,8 +22,10 @@ flatten(if(p("bydm.automatic.uomconversion") == "true")
   			ACTIONCODE: itemLogisticUnitInformation.actionCode,
   			(MS_BULK_REF: vars.storeHeaderReference.bulkReference),
 			(MS_REF: vars.storeMsgReference.messageReference),
-			(INTEGRATION_STAMP:((vars.creationDateAndTime as DateTime) + ("PT$((index))S" as Period)) as String{format:"yyyy-MM-dd HH:mm:ss"})
-			
+			(INTEGRATION_STAMP:((vars.creationDateAndTime as DateTime) + ("PT$((index))S" as Period)) as String{format:"yyyy-MM-dd HH:mm:ss"}),
+			MESSAGE_TYPE: vars.bulkNotificationHeaders.bulkType,
+	 		INTEGRATION_JOBID: vars.bulkNotificationHeaders.bulkMessageSourceId,
+	 		SENDER: vars.bulkNotificationHeaders.sender
 		})
 	})
 }pluck($)))) filter sizeOf($) > 0 map ($.itemLogisticUnits orderBy ($.TRADEITEMQUANTITY)) map (logisticUnitInfo , index) -> {
@@ -53,7 +55,10 @@ flatten(if(p("bydm.automatic.uomconversion") == "true")
 			(ACTIONCODE: logisticUnitInfo[sizeOf(logisticUnitInfo) - 1].ACTIONCODE),
 			(MS_BULK_REF: vars.storeHeaderReference.bulkReference),
 			(MS_REF: vars.storeMsgReference.messageReference),
-			(INTEGRATION_STAMP:((vars.creationDateAndTime as DateTime) + ("PT$((index))S" as Period)) as String{format:"yyyy-MM-dd HH:mm:ss"})
+			(INTEGRATION_STAMP:((vars.creationDateAndTime as DateTime) + ("PT$((index))S" as Period)) as String{format:"yyyy-MM-dd HH:mm:ss"}),
+			MESSAGE_TYPE: vars.bulkNotificationHeaders.bulkType,
+	 		INTEGRATION_JOBID: vars.bulkNotificationHeaders.bulkMessageSourceId,
+	 		SENDER: vars.bulkNotificationHeaders.sender,
 	}),(flatten(flatten(flatten((payload.item map (item, itemIndex) -> {
 	itemLogisticUnitInformation:(item.itemLogisticUnitInformation map (itemLogisticUnitInformation , index) -> {
 		itemLogisticUnits:(itemLogisticUnitInformation.itemLogisticUnit map (itemLogisticUnit , index) -> {
@@ -83,7 +88,10 @@ flatten(if(p("bydm.automatic.uomconversion") == "true")
   			ACTIONCODE: itemLogisticUnitInformation.actionCode,
   			(MS_BULK_REF: vars.storeHeaderReference.bulkReference),
 			(MS_REF: vars.storeMsgReference.messageReference),
-			(INTEGRATION_STAMP:((vars.creationDateAndTime as DateTime) + ("PT$((index))S" as Period)) as String{format:"yyyy-MM-dd HH:mm:ss"})
+			(INTEGRATION_STAMP:((vars.creationDateAndTime as DateTime) + ("PT$((index))S" as Period)) as String{format:"yyyy-MM-dd HH:mm:ss"}),
+			MESSAGE_TYPE: vars.bulkNotificationHeaders.bulkType,
+	 		INTEGRATION_JOBID: vars.bulkNotificationHeaders.bulkMessageSourceId,
+	 		SENDER: vars.bulkNotificationHeaders.sender,
 		})
 	})
 }pluck($)))) filter sizeOf($) > 0 map ($.itemLogisticUnits orderBy ($.TRADEITEMQUANTITY)) map (logisticUnitInfo , index) -> {
@@ -97,7 +105,11 @@ flatten(if(p("bydm.automatic.uomconversion") == "true")
 			ACTIONCODE: logisticUnitInfo[0].ACTIONCODE,
 			(MS_BULK_REF: vars.storeHeaderReference.bulkReference),
 			(MS_REF: vars.storeMsgReference.messageReference),
-			(INTEGRATION_STAMP:((vars.creationDateAndTime as DateTime) + ("PT$((index))S" as Period)) as String{format:"yyyy-MM-dd HH:mm:ss"})
+			(INTEGRATION_STAMP:((vars.creationDateAndTime as DateTime) + ("PT$((index))S" as Period)) as String{format:"yyyy-MM-dd HH:mm:ss"}),
+			MESSAGE_TYPE: vars.bulkNotificationHeaders.bulkType,
+	 		INTEGRATION_JOBID: vars.bulkNotificationHeaders.bulkMessageSourceId,
+	 		SENDER: vars.bulkNotificationHeaders.sender,
+	 
 		}),
 		logistics_vol:({
 			ITEM: logisticUnitInfo[0].ITEM,
@@ -109,7 +121,10 @@ flatten(if(p("bydm.automatic.uomconversion") == "true")
 			ACTIONCODE: logisticUnitInfo[0].ACTIONCODE,
 			(MS_BULK_REF: vars.storeHeaderReference.bulkReference),
 			(MS_REF: vars.storeMsgReference.messageReference),
-			(INTEGRATION_STAMP:((vars.creationDateAndTime as DateTime) + ("PT$((index))S" as Period)) as String{format:"yyyy-MM-dd HH:mm:ss"})
+			(INTEGRATION_STAMP:((vars.creationDateAndTime as DateTime) + ("PT$((index))S" as Period)) as String{format:"yyyy-MM-dd HH:mm:ss"}),
+			MESSAGE_TYPE: vars.bulkNotificationHeaders.bulkType,
+	 		INTEGRATION_JOBID: vars.bulkNotificationHeaders.bulkMessageSourceId,
+	 		SENDER: vars.bulkNotificationHeaders.sender,
 		}),
 		logistics_depth:({
 			ITEM: logisticUnitInfo[0].ITEM,
@@ -121,7 +136,10 @@ flatten(if(p("bydm.automatic.uomconversion") == "true")
 			ACTIONCODE: logisticUnitInfo[0].ACTIONCODE,
 			(MS_BULK_REF: vars.storeHeaderReference.bulkReference),
 			(MS_REF: vars.storeMsgReference.messageReference),
-			(INTEGRATION_STAMP:((vars.creationDateAndTime as DateTime) + ("PT$((index))S" as Period)) as String{format:"yyyy-MM-dd HH:mm:ss"})
+			(INTEGRATION_STAMP:((vars.creationDateAndTime as DateTime) + ("PT$((index))S" as Period)) as String{format:"yyyy-MM-dd HH:mm:ss"}),
+			MESSAGE_TYPE: vars.bulkNotificationHeaders.bulkType,
+	 		INTEGRATION_JOBID: vars.bulkNotificationHeaders.bulkMessageSourceId,
+	 		SENDER: vars.bulkNotificationHeaders.sender,
 		})
 	}pluck($))),flatten(flatten((payload.item map (item, itemIndex) -> {
 	conversions: (item.measurementTypeConversion map(measurementTypeConversion , index) -> {
@@ -146,7 +164,10 @@ flatten(if(p("bydm.automatic.uomconversion") == "true")
 		ACTIONCODE: item.documentActionCode,
 		(MS_BULK_REF: vars.storeHeaderReference.bulkReference),
 		(MS_REF: vars.storeMsgReference.messageReference),
-		(INTEGRATION_STAMP:((vars.creationDateAndTime as DateTime) + ("PT$((index))S" as Period)) as String{format:"yyyy-MM-dd HH:mm:ss"})
+		(INTEGRATION_STAMP:((vars.creationDateAndTime as DateTime) + ("PT$((index))S" as Period)) as String{format:"yyyy-MM-dd HH:mm:ss"}),
+		MESSAGE_TYPE: vars.bulkNotificationHeaders.bulkType,
+	 	INTEGRATION_JOBID: vars.bulkNotificationHeaders.bulkMessageSourceId,
+	 	SENDER: vars.bulkNotificationHeaders.sender,
 	})
 } pluck($))))])
 
@@ -175,7 +196,10 @@ flatten(flatten((payload.item map (item, itemIndex) -> {
 		ACTIONCODE: item.documentActionCode,
 		(MS_BULK_REF: vars.storeHeaderReference.bulkReference),
 		(MS_REF: vars.storeMsgReference.messageReference),
-		(INTEGRATION_STAMP:((vars.creationDateAndTime as DateTime) + ("PT$((index))S" as Period)) as String{format:"yyyy-MM-dd HH:mm:ss"})
+		(INTEGRATION_STAMP:((vars.creationDateAndTime as DateTime) + ("PT$((index))S" as Period)) as String{format:"yyyy-MM-dd HH:mm:ss"}),
+		MESSAGE_TYPE: vars.bulkNotificationHeaders.bulkType,
+	 	INTEGRATION_JOBID: vars.bulkNotificationHeaders.bulkMessageSourceId,
+	 	SENDER: vars.bulkNotificationHeaders.sender,
 	})
 } pluck($)))))  map (uomCategoryConvFactor, indexOfUomCategoryConvFactor) -> {
 			ITEM: uomCategoryConvFactor.ITEM,
@@ -187,5 +211,8 @@ flatten(flatten((payload.item map (item, itemIndex) -> {
 			ACTIONCODE: uomCategoryConvFactor.ACTIONCODE,
 			(MS_BULK_REF: vars.storeHeaderReference.bulkReference),
 			(MS_REF: vars.storeMsgReference.messageReference),
-			(INTEGRATION_STAMP:((vars.creationDateAndTime as DateTime) + ("PT$((indexOfUomCategoryConvFactor))S" as Period)) as String{format:"yyyy-MM-dd HH:mm:ss"})
+			(INTEGRATION_STAMP:((vars.creationDateAndTime as DateTime) + ("PT$((indexOfUomCategoryConvFactor))S" as Period)) as String{format:"yyyy-MM-dd HH:mm:ss"}),
+			MESSAGE_TYPE: vars.bulkNotificationHeaders.bulkType,
+	 		INTEGRATION_JOBID: vars.bulkNotificationHeaders.bulkMessageSourceId,
+	 		SENDER: vars.bulkNotificationHeaders.sender,
 			}

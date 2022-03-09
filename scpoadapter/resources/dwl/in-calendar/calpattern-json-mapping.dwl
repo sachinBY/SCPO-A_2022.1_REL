@@ -31,9 +31,9 @@ flatten(payload.calendar filter ($.calendarType != null and calendartypeCode[$.c
 		(PATTERN: if(calendarPattern.patternFrequencyCode=="EVERY_DAY") 2 
 				 else if(calendarPattern.patternFrequencyCode=="EVERY_ORDINAL_DAY") 3 
 				 else if(calendarPattern.patternFrequencyCode=="EVERY_WEEKDAY") 4
-				 else if(calendarPattern.patternFrequencyCode=="DAY_OF_WEEK") (if(calendarPattern.patternFrequency.weekly.weeksOfRecurrence == null or calendarPattern.patternFrequency.weekly.weeksOfRecurrence == 1) 1 else 3)
+				 else if(calendarPattern.patternFrequencyCode=="DAY_OF_WEEK") (if(calendarPattern.patternFrequency.weekly.weeksOfRecurrence == 1) 1 else 3)
 				 else if(calendarPattern.patternFrequencyCode=="MONTHLY_ON_DAY_OF_MONTH")(
-				 	if(calendarPattern.patternFrequency.monthly.monthsOfRecurrence == "1") 6 else 7)
+				 	if(calendarPattern.patternFrequency.weekly.monthsOfRecurrence == "1") 6 else 7)
 				 else 7) if(calendarPattern.patternFrequencyCode != null),
 		DESCR: if (calendarPattern.name != null) 
 					calendarPattern.name
@@ -45,13 +45,13 @@ flatten(payload.calendar filter ($.calendarType != null and calendartypeCode[$.c
 					calendarPattern.rank
 				else 
 					1,
-		MONDAYSW: if  (calendarPattern.patternFrequency.weekly.dayOfWeek != null and (calendarPattern.patternFrequency.weekly.dayOfWeek contains "MONDAY")) 1 else 0,
-		TUESDAYSW: if  (calendarPattern.patternFrequency.weekly.dayOfWeek != null and (calendarPattern.patternFrequency.weekly.dayOfWeek contains "TUESDAY")) 1 else 0,
-		WEDNESDAYSW: if  (calendarPattern.patternFrequency.weekly.dayOfWeek != null and (calendarPattern.patternFrequency.weekly.dayOfWeek contains "WEDNESDAY")) 1 else 0,
-		THURSDAYSW: if  (calendarPattern.patternFrequency.weekly.dayOfWeek != null and (calendarPattern.patternFrequency.weekly.dayOfWeek contains "THURSDAY")) 1 else 0,
-		FRIDAYSW: if  (calendarPattern.patternFrequency.weekly.dayOfWeek != null and (calendarPattern.patternFrequency.weekly.dayOfWeek contains "FRIDAY")) 1 else 0,
-		SATURDAYSW: if  (calendarPattern.patternFrequency.weekly.dayOfWeek != null and (calendarPattern.patternFrequency.weekly.dayOfWeek contains "SATURDAY")) 1 else 0,
-		SUNDAYSW: if  (calendarPattern.patternFrequency.weekly.dayOfWeek != null and (calendarPattern.patternFrequency.weekly.dayOfWeek contains "SUNDAY")) 1 else 0,
+		MONDAYSW: if  (isEmpty(calendarPattern.patternFrequency.weekly.dayOfWeek)) 0 else if (calendarPattern.patternFrequency.weekly.*dayOfWeek contains "MONDAY") 1 else 0,
+		TUESDAYSW: if  (isEmpty(calendarPattern.patternFrequency.weekly.dayOfWeek)) 0 else if (calendarPattern.patternFrequency.weekly.*dayOfWeek contains "TUESDAY") 1 else 0,
+		WEDNESDAYSW: if  (isEmpty(calendarPattern.patternFrequency.weekly.dayOfWeek)) 0 else if (calendarPattern.patternFrequency.weekly.*dayOfWeek contains "WEDNESDAY") 1 else 0,
+		THURSDAYSW: if  (isEmpty(calendarPattern.patternFrequency.weekly.dayOfWeek)) 0 else if (calendarPattern.patternFrequency.weekly.*dayOfWeek contains "THURSDAY") 1 else 0,
+		FRIDAYSW: if  (isEmpty(calendarPattern.patternFrequency.weekly.dayOfWeek)) 0 else if (calendarPattern.patternFrequency.weekly.*dayOfWeek contains "FRIDAY") 1 else 0,
+		SATURDAYSW: if  (isEmpty(calendarPattern.patternFrequency.weekly.dayOfWeek)) 0 else if (calendarPattern.patternFrequency.weekly.*dayOfWeek contains "SATURDAY") 1 else 0,
+		SUNDAYSW: if  (isEmpty(calendarPattern.patternFrequency.weekly.dayOfWeek)) 0 else if (calendarPattern.patternFrequency.weekly.*dayOfWeek contains "SUNDAY") 1 else 0,
 		REPEATEVERYNDAYS: if (calendarPattern.patternFrequency.everyOrdinalDay != null) 
 								calendarPattern.patternFrequency.everyOrdinalDay
 						  else 
