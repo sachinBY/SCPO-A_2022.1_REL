@@ -7,7 +7,7 @@ var default_value = "###JDA_DEFAULT_VALUE###"
 		MS_REF: skueffio.MS_REF,	
 		INTEGRATION_STAMP: skueffio.INTEGRATION_STAMP,
 		MESSAGE_TYPE: skueffio.MESSAGE_TYPE,
-  		INTEGRATION_JOBID: skueffio.INTEGRATION_JOBID,
+  		MESSAGE_ID: skueffio.MESSAGE_ID,
   		SENDER: skueffio.SENDER,
 	    ITEM: if (skueffio.ITEM != null) skueffio.ITEM else default_value,
 	    LOC: if (skueffio.LOC != null) skueffio.LOC else default_value,

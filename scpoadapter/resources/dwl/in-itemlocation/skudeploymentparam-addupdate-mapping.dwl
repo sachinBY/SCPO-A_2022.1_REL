@@ -8,7 +8,7 @@ var skuDeploymentParamEntity = vars.entityMap.sku[0].skudeploymentparam[0]
 		MS_REF: sdp.MS_REF,	
 		INTEGRATION_STAMP: sdp.INTEGRATION_STAMP,
 		MESSAGE_TYPE: sdp.MESSAGE_TYPE,
-  		INTEGRATION_JOBID: sdp.INTEGRATION_JOBID,
+  		MESSAGE_ID: sdp.MESSAGE_ID,
   		SENDER: sdp.SENDER,
 	    ITEM: if (sdp.ITEM != null) sdp.ITEM else default_value,
 	    LOC: if (sdp.LOC != null) sdp.LOC else default_value,

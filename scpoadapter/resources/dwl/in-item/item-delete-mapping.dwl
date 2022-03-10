@@ -6,7 +6,7 @@ output application/java
 	MS_REF: item.MS_REF, 
 	INTEGRATION_STAMP: item.INTEGRATION_STAMP,
 	MESSAGE_TYPE: item.MESSAGE_TYPE,
- 	INTEGRATION_JOBID: item.INTEGRATION_JOBID,
+ 	MESSAGE_ID: item.MESSAGE_ID,
  	SENDER: item.SENDER,
     (DEFAULTUOM: item.DEFAULTUOM) if not item.DEFAULTUOM == null,
     (DESCR: item.DESCR) if not item.DESCR == null,

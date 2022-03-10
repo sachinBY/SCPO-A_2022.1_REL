@@ -8,7 +8,7 @@ var SkuSSPresentationUDC = vars.entityMap.sku[0].skusspresentation[0]
 		MS_REF: value.MS_REF,	
 		INTEGRATION_STAMP: value.INTEGRATION_STAMP,
 		MESSAGE_TYPE: value.MESSAGE_TYPE,
-  		INTEGRATION_JOBID: value.INTEGRATION_JOBID,
+  		MESSAGE_ID: value.MESSAGE_ID,
   		SENDER: value.SENDER,
 	    ITEM: if (value.ITEM != null) value.ITEM else default_value,
 	    LOC: if (value.LOC != null) value.LOC else default_value,

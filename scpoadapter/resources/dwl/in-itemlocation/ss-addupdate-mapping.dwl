@@ -8,7 +8,7 @@ var skuSSEntity = vars.entityMap.sku[0].skuss[0]
 		MS_REF: ss.MS_REF,	
 		INTEGRATION_STAMP: ss.INTEGRATION_STAMP,
 		MESSAGE_TYPE: ss.MESSAGE_TYPE,
-  		INTEGRATION_JOBID: ss.INTEGRATION_JOBID,
+  		MESSAGE_ID: ss.MESSAGE_ID,
   		SENDER: ss.SENDER,
 	    ITEM: if (ss.ITEM != null) ss.ITEM else default_value,
 	    LOC: if (ss.LOC != null) ss.LOC else default_value,

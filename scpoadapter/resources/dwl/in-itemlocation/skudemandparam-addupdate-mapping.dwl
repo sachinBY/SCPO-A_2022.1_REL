@@ -8,7 +8,7 @@ var skuDemandParamEntity = vars.entityMap.sku[0].skudemandparam[0]
 		MS_REF: sdmd.MS_REF,	
 		INTEGRATION_STAMP: sdmd.INTEGRATION_STAMP,
 		MESSAGE_TYPE: sdmd.MESSAGE_TYPE,
-  		INTEGRATION_JOBID: sdmd.INTEGRATION_JOBID,
+  		MESSAGE_ID: sdmd.MESSAGE_ID,
   		SENDER: sdmd.SENDER,
 	  	ITEM: if (sdmd.ITEM != null) sdmd.ITEM else default_value,
 	    LOC: if (sdmd.LOC != null) sdmd.LOC else default_value,

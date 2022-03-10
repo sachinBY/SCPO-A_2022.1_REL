@@ -10,7 +10,7 @@ var entityMap = if (itemUomCatConvFactorEntity != null) unzip((itemUomCatConvFac
 			MS_REF: $.MS_REF, 
  			INTEGRATION_STAMP: $.INTEGRATION_STAMP,
  			MESSAGE_TYPE: $.MESSAGE_TYPE,
- 			INTEGRATION_JOBID: $.INTEGRATION_JOBID,
+ 			MESSAGE_ID: $.MESSAGE_ID,
  			SENDER: $.SENDER,
 			ITEM: $.ITEM,
 			RATIO: $.RATIO,

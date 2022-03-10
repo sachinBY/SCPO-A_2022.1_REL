@@ -7,7 +7,7 @@ var default_value = "###JDA_DEFAULT_VALUE###"
 		MS_REF: uomCategoryConvFactor.MS_REF, 
  		INTEGRATION_STAMP: uomCategoryConvFactor.INTEGRATION_STAMP,
  		MESSAGE_TYPE: uomCategoryConvFactor.MESSAGE_TYPE,
- 		INTEGRATION_JOBID: uomCategoryConvFactor.INTEGRATION_JOBID,
+ 		MESSAGE_ID: uomCategoryConvFactor.MESSAGE_ID,
  		SENDER: uomCategoryConvFactor.SENDER,
 		ITEM: uomCategoryConvFactor.ITEM,
 		SOURCECATEGORY: uomCategoryConvFactor.SOURCECATEGORY,

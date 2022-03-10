@@ -8,7 +8,7 @@ var default_value = "###JDA_DEFAULT_VALUE###"
 		MS_REF: dmdunit.MS_REF,
  		INTEGRATION_STAMP: dmdunit.INTEGRATION_STAMP,
  		MESSAGE_TYPE: dmdunit.MESSAGE_TYPE,
-		INTEGRATION_JOBID: dmdunit.INTEGRATION_JOBID,
+		MESSAGE_ID: dmdunit.MESSAGE_ID,
 		SENDER: dmdunit.SENDER,
   		DMDUNIT: if (dmdunit.DMDUNIT != null) dmdunit.DMDUNIT else default_value,
 	    DESCR: if (dmdunit.DESCR != null) dmdunit.DESCR else default_value,

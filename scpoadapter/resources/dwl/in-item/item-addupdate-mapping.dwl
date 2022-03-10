@@ -8,7 +8,7 @@ var default_value = "###JDA_DEFAULT_VALUE###"
 		MS_REF: item.MS_REF, 	  	
    		INTEGRATION_STAMP: item.INTEGRATION_STAMP,
    		MESSAGE_TYPE: item.MESSAGE_TYPE,
- 		INTEGRATION_JOBID: item.INTEGRATION_JOBID,
+ 		MESSAGE_ID: item.MESSAGE_ID,
  		SENDER: item.SENDER,
     	DEFAULTUOM: if(item.DEFAULTUOM != null) item.DEFAULTUOM else default_value,    
 	    DESCR:  if(item.DESCR != null) item.DESCR else default_value,

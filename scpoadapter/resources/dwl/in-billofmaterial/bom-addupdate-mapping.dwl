@@ -8,7 +8,7 @@ var billOfMaterialEntity = vars.entityMap.billofmaterial[0].bom[0]
 			 MS_REF: bom.MS_REF,
  			 INTEGRATION_STAMP: bom.INTEGRATION_STAMP,
  			 MESSAGE_TYPE: bom.MESSAGE_TYPE,
- 		 	 INTEGRATION_JOBID: bom.INTEGRATION_JOBID,
+ 		 	 MESSAGE_ID: bom.MESSAGE_ID,
  		 	 SENDER: bom.SENDER,
 			 BOMNUM: bom.BOMNUM,
 			 CONSUMSTEPNUM: bom.CONSUMSTEPNUM,

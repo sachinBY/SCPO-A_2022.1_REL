@@ -9,7 +9,7 @@ var skuEntity = vars.entityMap.sku[0].sku[0]
 		MS_REF: sku.MS_REF,	
 		INTEGRATION_STAMP: sku.INTEGRATION_STAMP,
 		MESSAGE_TYPE: sku.MESSAGE_TYPE,
-  		INTEGRATION_JOBID: sku.INTEGRATION_JOBID,
+  		MESSAGE_ID: sku.MESSAGE_ID,
   		SENDER: sku.SENDER,
 	  	CREATIONDATE: if (sku.CREATIONDATE != null and funCaller.formatGS1ToSCPO(sku.CREATIONDATE) != default_value) sku.CREATIONDATE else default_value,
 	  	ENABLEOPT: if(sku.ENABLEOPT != null) sku.ENABLEOPT else default_value,

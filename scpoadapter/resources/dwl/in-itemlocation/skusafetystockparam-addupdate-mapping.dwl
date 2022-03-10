@@ -8,7 +8,7 @@ var skuSafetyStockParamEntity = vars.entityMap.sku[0].skusafetystockparam[0]
 		MS_REF: ssp.MS_REF,	
 		INTEGRATION_STAMP: ssp.INTEGRATION_STAMP,
 		MESSAGE_TYPE: ssp.MESSAGE_TYPE,
-  		INTEGRATION_JOBID: ssp.INTEGRATION_JOBID,
+  		MESSAGE_ID: ssp.MESSAGE_ID,
   		SENDER: ssp.SENDER,
 	    ITEM: if (ssp.ITEM != null) ssp.ITEM else default_value,
 	    LOC: if (ssp.LOC != null) ssp.LOC else default_value,

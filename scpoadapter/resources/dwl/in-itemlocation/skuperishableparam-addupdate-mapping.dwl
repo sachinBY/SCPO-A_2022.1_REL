@@ -8,7 +8,7 @@ var skuPerishableParamEntity = vars.entityMap.sku[0].skuperishableparam[0]
 		MS_REF: spp.MS_REF,	
 		INTEGRATION_STAMP: spp.INTEGRATION_STAMP,
 		MESSAGE_TYPE: spp.MESSAGE_TYPE,
-  		INTEGRATION_JOBID: spp.INTEGRATION_JOBID,
+  		MESSAGE_ID: spp.MESSAGE_ID,
   		SENDER: spp.SENDER,
 	    ITEM: if (spp.ITEM != null) spp.ITEM else default_value,
 	    LOC: if (spp.LOC != null) spp.LOC else default_value,

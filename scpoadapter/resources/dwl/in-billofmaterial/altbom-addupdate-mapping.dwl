@@ -8,7 +8,7 @@ var alternateBillOfMaterialEntity = vars.entityMap.billofmaterial[0].altbom[0]
 			 MS_REF: altbom.MS_REF,
  			 INTEGRATION_STAMP: altbom.INTEGRATION_STAMP,
  			 MESSAGE_TYPE: altbom.MESSAGE_TYPE,
- 			 INTEGRATION_JOBID: altbom.INTEGRATION_JOBID,
+ 			 MESSAGE_ID: altbom.MESSAGE_ID,
  			 SENDER: altbom.SENDER,
 			 ALTSUBORD: altbom.ALTSUBORD,
 			 ALTSUBORDDISC: altbom.ALTSUBORDDISC,

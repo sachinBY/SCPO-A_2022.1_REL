@@ -8,7 +8,7 @@ var skuEffInventoryParamEntity = vars.entityMap.sku[0].skueffinventoryparam[0]
 		MS_REF: sep.MS_REF,	
 		INTEGRATION_STAMP: sep.INTEGRATION_STAMP,
 		MESSAGE_TYPE: sep.MESSAGE_TYPE,
-  		INTEGRATION_JOBID: sep.INTEGRATION_JOBID,
+  		MESSAGE_ID: sep.MESSAGE_ID,
   		SENDER: sep.SENDER,
 	    ITEM: if (sep.ITEM != null) sep.ITEM else default_value,
 	    LOC: if (sep.LOC != null) sep.LOC else default_value,
