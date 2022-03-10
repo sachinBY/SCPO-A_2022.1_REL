@@ -10,7 +10,7 @@ var lib = readUrl("classpath://config-repo/scpoadapter/resources/dwl/host-scpo-u
   (MS_REF: vars.storeMsgReference.messageReference),
   (INTEGRATION_STAMP:((vars.creationDateAndTime as DateTime) + ("PT$(($$))S" as Period)) as String{format:"yyyy-MM-dd HH:mm:ss"}),
   MESSAGE_TYPE: vars.bulkNotificationHeaders.bulkType,
-  INTEGRATION_JOBID: vars.bulkNotificationHeaders.bulkMessageSourceId,
+  MESSAGE_ID: vars.bulkNotificationHeaders.bulkMessageSourceId,
   SENDER: vars.bulkNotificationHeaders.sender,
   (BORROWINGPCT: $.planningDetails.borrowingPercentage) 
   				if( $.planningDetails.borrowingPercentage != "" and $.planningDetails.borrowingPercentage != null),

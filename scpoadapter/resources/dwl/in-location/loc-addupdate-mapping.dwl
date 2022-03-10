@@ -9,7 +9,7 @@ var locEntity = vars.entityMap.loc[0].loc[0]
 		MS_REF: loc.MS_REF,
   		INTEGRATION_STAMP: loc.INTEGRATION_STAMP,
   		MESSAGE_TYPE: loc.MESSAGE_TYPE,
-		INTEGRATION_JOBID: loc.INTEGRATION_JOBID,
+		MESSAGE_ID: loc.MESSAGE_ID,
 		SENDER: loc.SENDER,
   		BORROWINGPCT: if (loc.BORROWINGPCT != null) loc.BORROWINGPCT else default_value,
 	    CURRENCY: if (loc.CURRENCY != null) loc.CURRENCY else default_value,
