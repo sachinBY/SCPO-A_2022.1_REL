@@ -1,4 +1,4 @@
 scheduler:
   csv-to-igp:
-    enabled: true
+    enabled: false
     frequency: '1' #in mins.
