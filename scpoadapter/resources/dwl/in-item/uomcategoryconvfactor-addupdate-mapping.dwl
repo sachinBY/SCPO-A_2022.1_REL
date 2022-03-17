@@ -23,5 +23,12 @@ var entityMap = if (itemUomCatConvFactorEntity != null) unzip((itemUomCatConvFac
 			//}),
 			//(entityMap[$$] map(v,k)-> {
 				//((itemUomCatConvFactorCol[(k)]) : default_value) if (v ~= false)
-			//})		
+			//})	
+			($.avplistUDCS default [] map {
+	      		(($.UDCName): if ($.UDCValue == null or $.UDCValue == default_value) default_value
+								else if ($.dataType != null and $.dataType == "DATETIME") $.UDCValue as DateTime as String
+								else if ($.dataType != null and $.dataType == "DATE") $.UDCValue as Date {format: "yyyy-MM-dd", class : "java.sql.Date"}
+								else if ($.dataType != null and ($.dataType == "NUMBER" or $.dataType == "FLOAT" or $.dataType == "INTEGER")) $.UDCValue as Number
+								else $.UDCValue) if ($ != null and $.UDCName != null)
+	    	})	
 }
