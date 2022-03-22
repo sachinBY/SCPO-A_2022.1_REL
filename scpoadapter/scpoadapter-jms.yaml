@@ -2,8 +2,8 @@ mbJmsComponent:
   queue:
     brokerURL: failover:(tcp://localhost:61616)
     user: admin
-    maxConnections: "5"
-    concurrentConsumers: "3"
+    maxConnections: "15"
+    concurrentConsumers: "9"
     initialRedeliveryDelay: "20000"
     redeliveryDelay: "20000"
     sessionCacheSize: "100"
