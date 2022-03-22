@@ -1,9 +1,9 @@
 mbJmsComponent:
   queue:
-    brokerURL: failover:(tcp://localhost:61616)
+    brokerURL: failover:(tcp://localhost:61616)?jms.prefetchPolicy.all=20
     user: admin
-    maxConnections: "15"
-    concurrentConsumers: "9"
+    maxConnections: "5"
+    concurrentConsumers: "3"
     initialRedeliveryDelay: "20000"
     redeliveryDelay: "20000"
     sessionCacheSize: "100"
