@@ -58,7 +58,7 @@ scpo:
       tables_for_soft_delete: "hist"
     bydm_item:
       #version: "2021.3.0"
-      tables: "item,dmdunit,uomcategoryconvfactor"
+      tables: "item1,dmdunit,uomcategoryconvfactor"
       tables_for_soft_delete: "item"
     bydm_itemhierarchylevelmember:
       tables: "dmdunit"
