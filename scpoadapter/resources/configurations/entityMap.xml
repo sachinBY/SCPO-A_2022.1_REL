@@ -358,6 +358,13 @@
     		<column hostColumnName="sap4" scpoColumnName="udc4"/>
     		<column hostColumnName="sap5" scpoColumnName="udc5"/>
     	</table>
+    	<table name="uomcategoryconvfactor">
+    		<column hostColumnName="sap_str1" scpoColumnName="udc1"/>
+    		<column hostColumnName="sap_str2" scpoColumnName="udc2" dataType="date"/>
+    		<column hostColumnName="sap_str3" scpoColumnName="udc3"/>
+    		<column hostColumnName="sap_str4" scpoColumnName="udc4"/>
+    		<column hostColumnName="sap_str5" scpoColumnName="udc5"/>
+    	</table>
     	<table name="UDT_ITEM" isUDT="true">
     		<column hostColumnName="creationDateTime" scpoColumnName="udc1" dataType="datetime"/>
     		<column hostColumnName="itemIdentification/additionalTradeItemIdentification" scpoColumnName="udc2"/>
@@ -1116,12 +1123,6 @@
     </entity-map>
     
     <entity-map scpoEntityName="fcstorder" bi-directional="true">
-		<table name="fcstorder" isOutBound="true">
-            <column hostColumnName="UDC_STR1" scpoColumnName="UDC_ATTRIBUTE_STR1"/>
-            <column hostColumnName="UDC_NUM1" scpoColumnName="UDC_ATTRIBUTE_NUM1" dataType="number"/>
-            <column hostColumnName="UDC_DTE1" scpoColumnName="UDC_ATTRIBUTE_DTE1" dataType="date"/>
-            <column hostColumnName="UDC_FLT1" scpoColumnName="UDC_ATTRIBUTE_FLT1" dataType="float"/>
-         </table>
     	<!-- <table name="fcstorder" isOutBound="true">
     		<column hostColumnName="basicParty/partyName" scpoColumnName="udc1"/>
     		<column hostColumnName="basicParty/partyAddress/city" scpoColumnName="udc2"/>
