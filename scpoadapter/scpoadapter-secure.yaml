@@ -35,16 +35,16 @@ scpo:
 bulk:
   azure:
     container:
-      name: "systemteamblob" 
+      name:  
     connection:
-      string-secure: "DefaultEndpointsProtocol=https;AccountName=systemteamblobstorage;AccountKey=CRmi9T2wg1LHgnWHGfhOmthcKlZgA74kEiJ5Jop/R91qJ3ThqBzRc9lMTEroOoFGRVrcUfi1x+IMFQ+a7+0NhA==;EndpointSuffix=core.windows.net"
+      string-secure: 
   callback:
     password-secure:
     azure:
       container:
         name: "systemteamblob"
       connection:
-        string-secure: "DefaultEndpointsProtocol=https;AccountName=systemteamblobstorage;AccountKey=CRmi9T2wg1LHgnWHGfhOmthcKlZgA74kEiJ5Jop/R91qJ3ThqBzRc9lMTEroOoFGRVrcUfi1x+IMFQ+a7+0NhA==;EndpointSuffix=core.windows.net"
+        string-secure: 
     ingestion:
       truststore:
         password-secure: "changeme"
