@@ -105,7 +105,7 @@ scpo:
     skustatstatic:
       receivers: 'HOST.GLOBAL'
       messagetype: 'itemLocationStatistics'
-      format: 'csv'
+      format: 'bydm'
       
     depdmdstatic:
       receivers: 'HOST.GLOBAL'
