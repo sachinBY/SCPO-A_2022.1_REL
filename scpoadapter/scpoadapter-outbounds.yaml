@@ -135,5 +135,6 @@ scpo:
       receivers: 'HOST.GLOBAL'   
       messagetype: 'forecast2'    
       #version: '2021.2.0'
+      buckets: 'monthly'
       periods: "52" 
       format: 'bydm' 

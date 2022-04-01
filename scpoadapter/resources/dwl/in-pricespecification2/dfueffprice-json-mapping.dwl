@@ -24,7 +24,7 @@ var dfueffpriceEntity = vars.entityMap.dfuprice[0].dfueffprice[0]
 		else default_value,
 	STARTDATE: if (!isEmpty($.priceEffectiveFromDate)) $.priceEffectiveFromDate as Date {format:"yyyy-MM-dd",class:"java.sql.Date"}
 		else default_value,
-	(if ($.avpList != null  and ($.documentActionCode == "ADD" or $.documentActionCode == "CHANGE_BY_REFRESH") and dfueffpriceEntity != null) 
+	(if ($.avpList != null  and dfueffpriceEntity != null) 
 		lib.transformAvpListToUdcs(dfueffpriceEntity, $.avpList, lib.getAvpListMap($.avpList)) else null),
 	ACTIONCODE: $.documentActionCode default "CHANGE_BY_REFRESH"
 })
