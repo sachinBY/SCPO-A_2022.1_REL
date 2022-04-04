@@ -9,7 +9,7 @@
 <table name="DDEPROFILE">
 	<column name="DDEPROFILEID" sequence="DDEPROFILEENTRYSEQ" />
 </table>
-<table name="SKUEXTERNALFCST">
+<!-- <table name="SKUEXTERNALFCST">
 	<column name="ORDERSEQNUM" sequence="SKUEXTERNALFCSTSEQ" />
-</table>
+</table> -->
 </sequence-configuration>
