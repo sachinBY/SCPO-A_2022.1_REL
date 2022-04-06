@@ -35,9 +35,6 @@ var lib = readUrl("classpath://config-repo/scpoadapter/resources/dwl/host-scpo-u
 	  	STOCKCATEGORY: if(!isEmpty($.inventoryStatus)) $.inventoryStatus else default_value,
   		//BATCHNUMBER: if ($.batchNumber != null and $.batchNumber != "") $.batchNumber
   		//else default_value,
-		ACTIONCODE: if (vars.notification.bulkNotification.documentActionCode[0] != null and vars.notification.bulkNotification.documentActionCode[0] == 'ADD') 'ADD'
-				else if (vars.notification.bulkNotification.documentActionCode[0] != null and vars.notification.bulkNotification.documentActionCode[0] == 'CHANGE_BY_REFRESH') 'CHANGE_BY_REFRESH'
-				else if (vars.notification.bulkNotification.documentActionCode[0] != null and vars.notification.bulkNotification.documentActionCode[0] == 'DELETE') 'DELETE' 
-				else 'ADD'
+		ACTIONCODE: "ADD"
   		
   })

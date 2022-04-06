@@ -25,4 +25,4 @@ var result = (seqs map {
 	'vals': columns ++ ',' ++ ($)
 }).vals joinBy (',') default columns
 ---
-"options(skip = 1, errors=999999999," ++ "bindsize=" ++ p("sqlldr.bindsize") ++ ",readsize=" ++ p("sqlldr.readsize") ++", parallel=true) load data CHARACTERSET " ++ p("sqlldr.charactersetname") ++ " infile '" ++ (vars.updateCSVPath) ++ "' " ++ " append into table " ++ p('scpo.schema.staging.' ++ lower(vars.tableName) ++ '.update') ++ " fields terminated by '|' optionally enclosed by '\"' TRAILING NULLCOLS (" ++ result ++ ")"
+"options(skip = 1, errors=999999999," ++ "bindsize=" ++ p("sqlldr.bindsize") ++ ",readsize=" ++ p("sqlldr.readsize") ++", parallel=true) load data CHARACTERSET " ++ p("sqlldr.charactersetname") ++ " infile '" ++ (vars.updateCSVPath) ++ "' " ++ " append into table " ++ p('scpo.schema.staging.' ++ lower(vars.tableName) ++ '.update') ++ " fields terminated by ',' optionally enclosed by '|' TRAILING NULLCOLS (" ++ result ++ ")"

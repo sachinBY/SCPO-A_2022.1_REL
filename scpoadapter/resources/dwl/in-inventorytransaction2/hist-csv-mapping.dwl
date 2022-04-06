@@ -36,6 +36,6 @@ var lib = readUrl("classpath://config-repo/scpoadapter/resources/dwl/host-scpo-u
 		DUR: if($.durationInMinutes != null and $.durationInMinutes != "") 
 					$.durationInMinutes as Number 
 			  else default_value,
-		ACTIONCODE: if (!isEmpty($.documentActionCode)) $.documentActionCode else if(!isEmpty(vars.bulknotificationHeaders.documentActionCode)) vars.bulknotificationHeaders.documentActionCode else "ADD"
+		ACTIONCODE: "ADD"
 	
   })
