@@ -42,9 +42,9 @@ bulk:
     password-secure:
     azure:
       container:
-        name: "systemteamblob"
+        name: "1_systemteamblob"
       connection:
-        string-secure: "DefaultEndpointsProtocol=https;AccountName=systemteamblobstorage;AccountKey=CRmi9T2wg1LHgnWHGfhOmthcKlZgA74kEiJ5Jop/R91qJ3ThqBzRc9lMTEroOoFGRVrcUfi1x+IMFQ+a7+0NhA==;EndpointSuffix=core.windows.net"
+        string-secure: "1_DefaultEndpointsProtocol=https;AccountName=systemteamblobstorage;AccountKey=CRmi9T2wg1LHgnWHGfhOmthcKlZgA74kEiJ5Jop/R91qJ3ThqBzRc9lMTEroOoFGRVrcUfi1x+IMFQ+a7+0NhA==;EndpointSuffix=core.windows.net"
     ingestion:
       truststore:
         password-secure: "changeme"
