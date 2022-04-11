@@ -2,7 +2,6 @@
 output application/csv deferred=true
 var udcs = vars.outboundUDCs.fcst[0].dfutoskufcstwide[0]
 import * from dw::core::Strings
-var n = p("scpo.outbound.dfutoskufcstwide.periods") as Number
 var buckets = p('scpo.outbound.dfutoskufcstwide.buckets')
 ---
 flatten(payload map (element, eleIndex) -> {

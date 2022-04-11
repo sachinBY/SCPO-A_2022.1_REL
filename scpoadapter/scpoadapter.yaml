@@ -24,7 +24,7 @@ bydm:
     resource:
       timemeasurementunitcode: "sec"         
   message:
-    size: "10000"     
+    size: "100"     
   network:
     default:
       transmode: " "

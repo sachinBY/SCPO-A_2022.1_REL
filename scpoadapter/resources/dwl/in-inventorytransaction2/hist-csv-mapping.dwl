@@ -2,7 +2,7 @@
 output application/java
 var default_value = "###JDA_DEFAULT_VALUE###"
 var funCaller = readUrl("classpath://config-repo/scpoadapter/resources/dwl/date-util.dwl")
-var histStreams = vars.codeMap[3]
+var histStreams = vars.codeMap.histStreamConversion
 var histEntity = vars.entityMap.hist[0].hist[0]
 var lib = readUrl("classpath://config-repo/scpoadapter/resources/dwl/host-scpo-udc-mapping.dwl")
 ---
@@ -30,7 +30,7 @@ var lib = readUrl("classpath://config-repo/scpoadapter/resources/dwl/host-scpo-u
 	  	STARTDATE: if ($.startDate != null and $.startDate != "" and funCaller.formatGS1ToSCPO($.startDate) != default_value) $.startDate as Date {format: "yyyy-MM-dd", class : "java.sql.Date"}
 		  	else default_value,
 	  	HISTSTREAM: if ($.transactionCode != null and $.transactionCode != "" and histStreams."$($.transactionCode)"[0] != null) histStreams."$($.transactionCode)"[0]
-	  		else " ",
+	  		else default_value,
 	  	QTY: if ($."quantity.value" != null and $."quantity.value" != "") $."quantity.value" 
 			else default_value,
 		DUR: if($.durationInMinutes != null and $.durationInMinutes != "") 
