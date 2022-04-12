@@ -1,10 +1,17 @@
+#########################################################
+#
+#         JMS active mq configuration
+#
+#########################################################
 mbJmsComponent:
   queue:
     password-secure: admin
-      
+#########################################################    
+#
+#         SCPO database configuration
+#
+#########################################################      
 scpo:
-  intermediateQueue:
-    password-secure: admin
   db:
     oracle:
       password-secure: SCPOMGR

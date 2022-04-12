@@ -15,5 +15,6 @@ var default_value = "###JDA_DEFAULT_VALUE###"
 	PRIMARYSTEPNUM: productionStep.PRIMARYSTEPNUM,
 	ALTRES: productionStep.ALTRES,
 	EFF: default_value,
+	ALTRESGROUP: productionStep.ALTRESGROUP,
 	(vars.deleteudc): 'Y'
 })

@@ -1,3 +1,4 @@
+#SCPO adapter message store configuration
 scpo:                
   serviceName: "SCPO-GLOBAL"
   serviceType: "ADAPTER"

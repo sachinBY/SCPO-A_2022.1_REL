@@ -1,3 +1,4 @@
+#SCPO adapter acknowledgement configuration
 ack:
   sbdh:
     receiver: HOST.GLOBAL

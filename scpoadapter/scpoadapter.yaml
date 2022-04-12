@@ -1,6 +1,8 @@
+#SCPO adapter configuration to enable/disable message validation
 bydm:
   enable:
     validation: "true"
+#SCPO adapter timemeasurementunitcode configuration of tables    
   inbound:
     #possible values are seconds,minutes,hours,days,weeks,months,year..default will be minutes if configured as ""
     skudemandgruopparam:
@@ -22,9 +24,11 @@ bydm:
     purchmethod:
       timemeasurementunitcode: "sec"
     resource:
-      timemeasurementunitcode: "sec"         
+      timemeasurementunitcode: "sec"
+#SCPO adapter bulk outbound message size configuration                 
   message:
-    size: "10000"     
+    size: "100"    
+#SCPO adapter entity configuration       
   network:
     default:
       transmode: " "
@@ -39,7 +43,7 @@ bydm:
     process:
       ancestry: "false"    
       
-    
+#inventory and hist aggregation configuration    
   inventory:
     aggregation:
       enabled: true

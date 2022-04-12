@@ -1,3 +1,4 @@
+#SCPO adapter configuration for configuring API endpoints
 api:
   base: connect-scpo-adapter-api/v1
   version: 1.0.0

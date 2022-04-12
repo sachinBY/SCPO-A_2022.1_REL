@@ -1,3 +1,4 @@
+# SCPO Outbound flows configuration
 scpo:
   outbound:
     sender: 'SCPO.GLOBAL'
@@ -136,5 +137,4 @@ scpo:
       messagetype: 'forecast2'    
       #version: '2021.2.0'
       buckets: 'monthly'
-      periods: "52" 
       format: 'bydm' 

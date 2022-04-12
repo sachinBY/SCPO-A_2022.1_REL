@@ -1,6 +1,8 @@
+#SCPO adapter configuartion to enable/disable CDS
 scpo:
   cds:
     enabled: false
+#SCPO adapter database configuartion     
   db:
     type: ""
     blockSize: "100"

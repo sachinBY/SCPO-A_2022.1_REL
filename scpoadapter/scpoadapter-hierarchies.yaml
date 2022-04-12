@@ -1,3 +1,4 @@
+#SCPO adapter configuration to load data into tables in order mentioned below 0 means first table to load, 1 means second table and so on
 scpo:
   tables:
     hierarchies:

@@ -1,3 +1,4 @@
+#SCPO adapter message archive configuration
 file:
   archive:
     enabled: "true"

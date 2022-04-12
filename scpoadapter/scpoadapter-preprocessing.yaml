@@ -1,4 +1,4 @@
-#To configure the uomshortlabels and uomcategories field specific tables
+#To configure the uomshortlabels and uomcategories field specific tables of inbound entities in SCPO
 bydm:
   entity:
     bom:

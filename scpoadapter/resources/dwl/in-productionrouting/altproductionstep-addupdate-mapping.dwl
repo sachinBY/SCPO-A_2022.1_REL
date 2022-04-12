@@ -20,6 +20,7 @@ var funCaller = readUrl("classpath://config-repo/scpoadapter/resources/dwl/date-
 		PRODRATECAL:  productionStep.PRODRATECAL,
 		USAGESW: productionStep.USAGESW,
 		PRIORITY: productionStep.PRIORITY, 
+		ALTRESGROUP: productionStep.ALTRESGROUP,
 		(productionStep.udcs map {
 			(($.scpoColumnName): if ($.scpoColumnValue == null or $.scpoColumnValue == default_value) default_value
 								else if ($.dataType != null and $.dataType == "DATETIME") $.scpoColumnValue as DateTime as String

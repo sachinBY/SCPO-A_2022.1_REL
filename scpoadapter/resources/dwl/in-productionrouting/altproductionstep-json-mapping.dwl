@@ -25,6 +25,8 @@ flatten(flatten(flatten(payload.productionRouting map (productionRouting, produc
 				PRODRATECAL: if (alternateResource.productionRateCalendar != null) alternateResource.productionRateCalendar else default_value,
 				USAGESW: if (alternateResource.isUsedForPlanning != null and alternateResource.isUsedForPlanning == true) 1 else if (alternateResource.isUsedForPlanning != null and alternateResource.isUsedForPlanning == false) 0 else default_value,
 				PRIORITY: if (alternateResource.priority != null) alternateResource.priority as Number else default_value,
+				//ALTRESGROUP is primary key in live table so IGP table has kept not null constraint, but there is no mapping for ALTRESGROUP so adapter is defaulting live table default value here.
+				ALTRESGROUP: ' ',
 				avplistUDCS:(flatten([(lib.getUdcNameAndValue(altProductionStepEntity, productionRouting.avpList, lib.getAvpListMap(productionRouting.avpList) )[0]) if (productionRouting.avpList != null 
 				and (productionRouting.documentActionCode == "ADD" or productionRouting.documentActionCode == "CHANGE_BY_REFRESH")
 				and altProductionStepEntity != null),

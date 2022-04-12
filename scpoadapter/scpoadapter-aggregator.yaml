@@ -1,3 +1,4 @@
+#SCPO adapter message aggregation configurations
 bydm:
   aggregator:
     objectstore:

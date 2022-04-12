@@ -1,3 +1,4 @@
+#SCPO adapter configuration to send error notification
 scpo:
   error:
     notification:

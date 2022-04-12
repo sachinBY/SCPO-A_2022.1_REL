@@ -1,3 +1,4 @@
+#SCPO adapter canmodel configuration
 canmodel:
   bydm:
     #use BYDM_CONFIG_CANMODEL_SERVICE to use canmodel as a service. 
