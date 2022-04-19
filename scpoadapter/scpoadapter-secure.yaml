@@ -42,16 +42,16 @@ scpo:
 bulk:
   azure:
     container:
-      name:  
+      name: 
     connection:
-  callback:
       string-secure: 
+  callback:
     password-secure:
     azure:
       container:
-        name: 
+        name:
       connection:
-        string-secure: 
+        string-secure:
     ingestion:
       truststore:
         password-secure: "changeme"
@@ -82,6 +82,6 @@ canmodel:
 #
 ##########################################################      
 sqlldr:
-  path-secure: "C:\\oracle\\product\\19c\\bin\\sqlldr.exe"
+  path-secure:  "C:\\oracle\\product\\19c\\bin\\sqlldr.exe"
   connection:
     string-secure: "IGPMGR/IGPMGR@md1npdvjce01:1521/o19c01"
