@@ -29,7 +29,7 @@ scpo:
           host: "md1npdvjce01.dev.corp.local"
           port: "9831"
         https:
-          host: "IN__md1npdvjce01.dev.corp.local"
+          host: "localhost"
           port: "9830"
           tls:
             keyStore:
