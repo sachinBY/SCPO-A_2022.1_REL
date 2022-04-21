@@ -18,7 +18,7 @@ import * from dw::Runtime
 	DISCRETESW: if ( itm.operationalRules.isDiscrete != null and itm.operationalRules.isDiscrete == true ) 1 else default_value,
 	ITEM: itm.itemId.primaryId,
 	ITEMCLASS: if ( itm.classifications.itemClass != null ) itm.classifications.itemClass else default_value,
-	PERISHABLESW: if (!isEmpty(itm.classifications.handlingInstruction filter (itm.handlingInstructionCode == 'PER'))) 1 else default_value,
+	PERISHABLESW: if (!isEmpty(itm.classifications.handlingInstruction filter ($.handlingInstructionCode == 'PER'))) 1 else default_value,
 	PRIORITY: if ( itm.priority != null ) itm.priority else default_value,
 	STORAGEGROUP: if ( itm.classifications.itemFamilyGroup != null ) itm.classifications.itemFamilyGroup else default_value,
 	UNITSPERPALLET: if ( itm.itemLogisticUnitInformation.itemLogisticUnit.packageCodeType == "PX" and itm.itemLogisticUnitInformation.itemLogisticUnit.tradeItemQuantity.value != null ) itm.itemLogisticUnitInformation.itemLogisticUnit.tradeItemQuantity.value else default_value,
