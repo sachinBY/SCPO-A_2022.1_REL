@@ -1178,10 +1178,17 @@
     	</table> -->
     </entity-map>
 	<entity-map scpoEntityName="projorderskutotal" bi-directional="true">
-    	<table name="projorderskutotal" isOutBound="true">
+    	<!-- <table name="projorderskutotal" isOutBound="true">
     		<column hostColumnName="UDC_ATTRIBUTE_STR1" scpoColumnName="UDC_ATTRIBUTE_STR1"/>
     		 <column hostColumnName="UDC_ATTRIBUTE_STR2" scpoColumnName="UDC_ATTRIBUTE_STR2"/>
     		<column hostColumnName="UDC_ATTRIBUTE_STR3" scpoColumnName="UDC_ATTRIBUTE_STR3"/> 
-    	</table>
+    	</table> -->
+    </entity-map>
+    <entity-map scpoEntityName="retailplan2" bi-directional="true">
+    	<!-- <table name="udt_ep_forecast">
+    		<column hostColumnName="UDC_ATTRIBUTE_STR1" scpoColumnName="UDC_ATTRIBUTE_STR1"/>
+    		 <column hostColumnName="UDC_ATTRIBUTE_STR2" scpoColumnName="UDC_ATTRIBUTE_STR2"/>
+    		<column hostColumnName="UDC_ATTRIBUTE_STR3" scpoColumnName="UDC_ATTRIBUTE_STR3"/> 
+    	</table> -->
     </entity-map>
 </entity-map-configuration>

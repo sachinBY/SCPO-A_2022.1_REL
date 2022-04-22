@@ -82,6 +82,6 @@ canmodel:
 #
 ##########################################################      
 sqlldr:
-  path-secure:  "C:\\oracle\\product\\19c\\bin\\sqlldr.exe"
+  path-secure: "C:\\oracle\\product\\19c\\bin\\sqlldr.exe"
   connection:
     string-secure: "IGPMGR/IGPMGR@md1npdvjce01:1521/o19c01"

@@ -11,7 +11,7 @@ scpo:
         bulk_csv_source_dir:
           path: "//MD1NPDVJCE01.dev.corp.local/Tools/u/SCPO-A/csvdata"
         processed_csv_dir:
-          path: "//MD1NPDVJCE01.dev.corp.local/Tools/u/SCPO-A/archive" 
+          path: "//MD1NPDVJCE01.dev.corp.local/Tools/u/SCPO-A/archive"
 #SCPO adapter configuration of inbound entities with messagetype and corresponding tables            
     bydm_billofmaterial:
       #version: "2021.2.0"
@@ -143,6 +143,9 @@ scpo:
       #version: "2021.2.0"
       tables: "vehicleloadline,vehicleload"
       tables_for_soft_delete: "vehicleload"
+    bydm_retailplan2:
+      tables: "udt_ep_forecast"
+      tables_for_soft_delete: "udt_ep_forecast"  
 #UDC used to mention soft delete      
   schema:
       staging:
@@ -359,3 +362,6 @@ scpo:
         vehicleloadline:
           insert: intins_vehicleloadln
           update: intups_vehicleloadln
+        udt_ep_forecast:
+          insert: intins_udt_ep_forecast
+          update: intups_udt_ep_forecast    
